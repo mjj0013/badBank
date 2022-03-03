@@ -13,12 +13,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export const UserContext = React.createContext(null);
-
-
 function Spa() {
   return (
     <HashRouter>
-      <NavBar/>
+      {/* <div className="navbar"/> */}
+      <NavBar />
       <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
         <div className="container" style={{padding: "20px"}}>
           <Routes>

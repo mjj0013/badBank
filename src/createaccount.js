@@ -35,10 +35,7 @@ export function CreateAccount(){
   }
 
   return (
-    <Card
-      bgcolor="primary"
-      header="Create Account"
-      status={status}
+    <Card bgcolor="primary" header="Create Account" status={status}
       body={show ? (  
               <>
               Name<br/>
@@ -54,7 +51,8 @@ export function CreateAccount(){
               <h5>Success</h5>
               <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
               </>
-            )}
+            )
+        }
     />
   )
 }
