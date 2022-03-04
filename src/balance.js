@@ -1,5 +1,9 @@
-export function Balance(){
+export const Balance = () =>{
   return (
-    <h1>Balance</h1>
+    <div>
+      <h1>Balance</h1>
+    </div>
+    
   )
 }
+

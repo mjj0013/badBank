@@ -1,5 +1,8 @@
-export function Withdraw(){
+export const Withdraw = () =>{
   return (
-    <h1>Withdraw</h1>
+    <div>
+      <h1>Withdraw</h1>
+    </div>
+    
   )
 }

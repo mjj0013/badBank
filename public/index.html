@@ -5,21 +5,24 @@
     <title>Bad Bank</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="../src/css/bootstrap.min.css" /> -->
+
     <!-- don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.17.6/babel.js" type="text/babel"></script>
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/babel"></script> -->
   </head>
   <body>
     <!-- we will put our teact component inside this div -->
-    <div id="root"></div>
+    
+    
     <!-- load react -->
-    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js" crossorigin></script>
-
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router@6.2.2/umd/react-router.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router-dom@6.2.2/umd/react-router-dom.development.js" crossorigin></script>
+    <!-- <script src="https://unpkg.com/browse/react-router-dom@6.2.2/umd/react-router-dom.development.js" crossorigin></script> -->
     <!-- load our react component. -->
-    <!-- <script src="../src/context.js" defer type="text/babel"></script>
+
+    <script src="../src/context.js" defer type="text/babel"></script>
     <script src="../src/navbar.js" defer type="text/babel"></script>
     <script src="../src/createaccount.js" defer type="text/babel"></script>
     <script src="../src/login.js" defer type="text/babel"></script>
@@ -28,60 +31,10 @@
     <script src="../src/balance.js" defer type="text/babel"></script>
     <script src="../src/alldata.js" defer type="text/babel"></script>
     <script src="../src/home.js" defer type="text/babel"></script>
-    <script src="../src/index.js" defer type="text/babel"></script> -->
-    <!-- <object data="./symbolDecomp.svg" width="100px" height="100px" ></object> -->
+    <script src="../src/index.js" defer type="text/babel"></script>
+    <div id="root"></div>
+    <script src="transformed.js"></script>
     
-    <svg  xmlns="https://www.w3.org/2000/svg" fill="#000000" height="500px" viewBox="-20 -20 40 40" >
-      
-      <path id="roof" d ="M 0.46 -17.92 a 1 1 0 0 0 -0.971 0 l -13.931 6.332 a 1 1 0 0 0 0.548 2.871 l 27.778 -0.127 a 1 1 0 0 0 0.676 -2.702 Z "></path>
-      <path id="foundation" >
-          <!-- M -13.581 35.425 a 1 1 0 0 0 14.397 1.302 l -2.496 -0.325 a 1 1 0 0 1 -9.044 0.326 l -0.217 -1.411 Z -->
-          <animate attributeName="d" dur="2s" repeatCount="indefinite" values="
-          M -14.303 10.435 a 1 1 0 0 0 0 2.742 l 28.575 0 c2.384 .342 2.277 -3.1 -.163 -2.742 l -14.091 0 l-14.308 .021;
-          M -13.476 5.427  a 1 1 0 0 0 14.467 1.268 l -2.533 -0.253 c-.215 3.96 -6.871 5.533 -9.033 .435 l -0.144 -1.158 l -2.746 -0.147"
-          keySplines=".17 .67 1 -.4; .17 .67 1 -.4"/> />
-      </path>
-  
-      <path id="column1"> 
-          <animate attributeName="d" dur="2s" repeatCount="indefinite" values="
-          M -12.078 -1.037 l 0 12.762 l 2.828 0 l 0 -12.762 l -2.805 0;
-          M -7.037  -17.301 l 0.198 30.893 l 0.908 0 l -0.623 -30.896 l-.478 0"/>
-      </path>
-      <path id="column2" d="M-5.078 -6.037 l 0 12.762 l 2.828 0 l 0 -12.762 Z "> </path>
-      <path id="column3" d="M 2.078 -6.037 l 0 12.762 l 2.828 0 l 0 -12.762 Z"> </path>
-      <path id="column4" d="M 9.078 -6.037 l 0 12.762 l 2.828 0 l 0 -12.762 Z "> </path>
-
-      <path id="floor" > 
-        <animate attributeName="d" dur="2s" repeatCount="indefinite" values="
-            M -12.503 6.735 a 1 1 0 0 0 0 2.742 l 24.999 0 c2.278 .825 2.351 -3.188 -.056 -2.819  l -12.327 -0.014 l-12.441 0.055;
-            M 0.886  -9.789 a 1 1 0 0 0 -13.674 3.545 l 1.989 0.036 c-1.178 -7.401 9.147 -7.139 10.057 -2.64 l1.845 -.073 l-.072 -0.857 "
-           
-          keyTimes="0; 1"
-          keySplines=".17 .67 1 -.4;.17 .67 1 -.4"/>
-      </path>
-      
-      <path id="ceiling" >
-        <animate attributeName="d" dur="2s" repeatCount="indefinite" values="
-          M -11.918 -7.493 
-          c-1.678 -0.108 -1.568 1.582 -0.081 1.456 
-          l24.059 -0.011 
-          c1.396 0.048 1.339 -1.54 -0.067 -1.464    
-          l-11.987 0.063 
-          l-11.919 -.074;
-
-
-          M -12.174 -3.287 
-          c3.415 3.934 10.889 3.799 10.563 9.044 
-          l2.608 0.278 
-          c-0.109 -8.103 -10.853 -7.959 -11.793 -11.214 
-          l-1.99 -0.037 
-          l0.594 1.914
-          "
-          
-          keyTimes="0; 1"
-          keySplines=".17 .67 1 -.4;.17 .67 1 -.4"/>
-       </path>
-  </svg>
 
   </body>
 </html>

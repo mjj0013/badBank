@@ -1,5 +1,5 @@
 import {Card} from './context.js'
-export function Home(){
+export const Home = () =>{
   return (
     <Card
       txtcolor="black"

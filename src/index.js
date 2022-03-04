@@ -1,5 +1,3 @@
-
-
 import {Home} from './home.js';
 import {CreateAccount} from './createaccount.js';
 import {Login} from './login.js';
@@ -13,21 +11,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export const UserContext = React.createContext(null);
-function Spa() {
+const Spa = () =>{
   return (
     <HashRouter>
-      {/* <div className="navbar"/> */}
+     
       <NavBar />
       <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
         <div className="container" style={{padding: "20px"}}>
           <Routes>
-            <Route path="/" exact component={Home} />
-            <Route path="/CreateAccount/" component={CreateAccount} />
-            <Route path="/login/" component={Login} />
-            <Route path="/deposit/" component={Deposit} />
-            <Route path="/withdraw/" component={Withdraw} />
-            <Route path="/balance/" component={Balance} />
-            <Route path="/alldata/" component={AllData} />
+            <Route path="/" exact element={<Home />} />
+            <Route path="/CreateAccount/" element={<CreateAccount />} />
+            <Route path="/login/" element={<Login />} />
+            <Route path="/deposit/" element={<Deposit/>} />
+            <Route path="/withdraw/" element={<Withdraw/>} />
+            <Route path="/balance/" element={<Balance/>} />
+            <Route path="/alldata/" element={<AllData/>} />
           </Routes>
           
         </div>
@@ -36,7 +34,10 @@ function Spa() {
   );
 }
 
-ReactDOM.render(
-  <Spa/>,
-  document.getElementById('root')
-);
+function render(Component) {
+	return ReactDOM.render(<Component />, document.getElementById("root"));
+}
+
+render(Spa)
+
+// ReactDOM.render(<Spa/>,document.getElementById('root'));

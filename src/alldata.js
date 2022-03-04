@@ -1,6 +1,6 @@
 import React from 'react';
 import {UserContext} from './index.js';
-export function AllData(){
+export const AllData = () =>{
   const ctx = React.useContext(UserContext);
   return (
     <>

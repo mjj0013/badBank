@@ -1,7 +1,7 @@
 import React from 'react';
 import {UserContext} from './index.js';
 import {Card} from './context.js';
-export function CreateAccount(){
+export const CreateAccount = () => {
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
   const [name, setName]         = React.useState('');

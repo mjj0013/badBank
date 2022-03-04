@@ -1,5 +1,11 @@
-export function Deposit(){
+import { SymbolDecomp } from "./symbolDecomp"
+export const Deposit = ()=>{
   return (
-    <h1>Deposit</h1>
+    <div>
+      <h1>Deposit</h1>
+      <SymbolDecomp />
+      {/* <object type="image/svg+xml" data = "symbolDecomp.svg" ></object> */}
+    </div>
+   
   )
 }
