@@ -8,7 +8,7 @@ export const SymbolDecomp = () => {
   var bank = {
     column1: "M -9.25 6.737 c 0 -4.266 0 -8.52 0 -12.774 c -0.935 0 -1.87 0 -2.805 0 c -0.023 4.254 -0.023 8.508 -0.023 12.762 c 0.9427 0 1.8853 0 2.828 0 c 0 -12.254 0 -12.508 0 -12.762",
     column2: "M -5.078 -6.037 c 0 4.254 0 8.508 0 12.762 c 0.9427 0 1.8853 0 2.828 0 c 0 -4.254 0 -8.508 0 -12.762 c -0.9427 0 -1.8853 0 -2.828 0",
-    column3: " M 4.96 -6.037 c 0 4.254 0 8.508 0 12.762 c 0.9427 -0 1.8853 -0 2.828 0 c 0 -4.254 0 -8.508 0 -12.762 c -0.9427 0 -1.8853 0 -2.828 0",
+    column3: " M 2.078 -6.037 c 0 4.254 0 8.508 0 12.762 c 0.9427 -0 1.8853 -0 2.828 0 c 0 -4.254 0 -8.508 0 -12.762 c -0.9427 0 -1.8853 0 -2.828 0",
     column4: " M 9.078 -6.037 c 0 4.254 0 8.508 0 12.762 c 0.9427 -0 1.8853 -0 2.828 0 c 0 -4.254 0 -8.508 0 -12.762 c -0.9427 0 -1.8853 0 -2.828 0",
 
     ceiling: " M -11.996 -6.026 a 1 0 0 0 0 24.056 -0.022 a 1 1 0 0 0 -0.154 0.014 c 1.396 0.048 1.339 -1.54 -0.067 -1.464 a 1 0 0 0 1 -24.252 -0.058 a 1 0 0 0 1 0.002 0.001 c -1.337 -0.031 -1.227 1.659 0.26 1.533",
@@ -46,7 +46,14 @@ export const SymbolDecomp = () => {
 
   //create account symbol: Windows user logo with plus sign
   var createAccount = {
-
+    ceiling:"M 0 -8 a 0.7813 0.75 90 0 0 0 8 a 0.7813 0.75 90 0 0 0 -8 c -0.008 0.368 -0.008 1.542 0 2 a 0.7813 0.75 90 0 1 0 4 a 0.7813 0.75 90 0 1 0 -4 c -0.023 -0.693 -0.008 -1.069 -0.008 -2.008", //head
+    column1:"M -10.077 -1.722 c -1.673 0 -2.174 -0.013 -3.003 0 c 0.014 0.415 0.014 1.355 0.014 2.004 c 1.393 -0.018 2.599 -0.012 0.993 -0.018 c 0.6703 0 1.3407 0 2.011 0 c -0.012 -0.757 -0.005 -1.46 -0.005 -1.986", 
+    column2: "M -5.098 -1.746 c -1.1747 0.02 -2.172 0.017 -2.972 0.02 c 0.0013 0.664 0.0027 1.328 0.004 1.992 c 1.73 -0.0073 2.27 0.007 2.985 0.015 c -0.007 -0.657 -0.017 -1.358 -0.022 -2.017",
+    roof: "M -8.077 0.278 c 0.015 -0.57 0 -1.067 -0.014 -2.004 l -1.806 -0.044 c -0.158 -0.007 -0.171 0.082 -0.144 0.124 l -0.007 0.082 a 1 1 0 0 0 0 0.117 l 0.016 1.602 a 1 1 0 0 0 0.086 0.107 l 1.869 0.016",
+    column3: "M -10.045 -4.712 c 0 1.162 -0.043 1.958 -0.043 3.034 c 0.538 -0.064 1.463 -0.064 1.958 -0.043 c 0.043 -1.141 0.043 -2.001 0.022 -2.991 c -0.323 0 -1.27 0 -1.98 0",     //top of plus
+    foundation:"M -10.003 3.276 c 1.498 -0.008 0.599 0 1.923 -0.002 c 0 -0.867 -0.005 -1.302 -0.005 -1.959 c 0.006 -0.31 0.006 -0.55 0.01 -1.05 c -0.501 -0.019 -1.789 -0.023 -1.979 0.001 c 0.036 0.979 0.052 2.086 0.052 3.008",
+    column4:"M -6.016 5.985 c 2.197 -2.303 8.753 -2.906 11.978 0.036 c 0.425 -0.071 1.418 -0.036 2.02 0 c 0.05 -4.98 -15.416 -5.616 -15.941 -0.009 c 0.663 -0.055 1.353 -0.028 1.933 -0.028",
+    floor:"M -8.024 7.984 c 7.461 0 11.572 0.017 16.01 -0.017 c 0.018 -0.916 0 -0.916 0 -0.916 c 0.018 -0.345 0.018 -0.656 0 -1.071 c -4.197 0 -8.998 0 -15.993 0.035 c 0.018 0.587 0 1.33 0 1.969",
   }
 
   //deposit symbol: safe with dial/lock
@@ -55,18 +62,23 @@ export const SymbolDecomp = () => {
   //login symbol: Google's login symbol
 
   //roof <=> "middle triangle"
-  var loginSymbol = {
+
+
+
+
+
+  var login = {
     roof: 
       ["M 12.343 0.497 c 0.066 -0.108 0.162 -0.246 0.15 -0.214 l -0.027 -0.267 c 0.08 -0.027 0.08 -0.08 -0.133 -0.187 l -19.838 -4.819 a 0.5 0.5 90 0 0 -0.52 0.4955 l 0.025 8.5185 a 0.5 0.5 90 0 0 0.4705 0.52 l 19.8625 -4.048",
-      "M 3.994 -0.011 c -1.236 -0.327 -2.459 -0.632 -3.796 -0.986 l -0.006 0.012 c 0.012 0.755 0.006 1.313 0.006 1.972 l 2.182 -0.581 a 1 1 0 0 0 0.036 -0.012 l 1.547 -0.39 a 1 1 0 0 0 0.029 -0.012"
+      "M 4.001 0.062 c 0.062 0.028 0.062 -0.048 -0.002 -0.086 l -3.662 -1.026 c -0.158 -0.007 -0.171 0.082 -0.144 0.124 l -0.007 0.082 a 1 1 0 0 0 0 0.117 l 0.016 1.602 a 1 1 0 0 0 0.086 0.107 l 3.705 -0.93"
       ],
-    column1: "M -5.004 -0.992 c -1.673 0 -3.346 0 -5.019 0 c 0.023 0.664 0.023 1.325 0.023 1.986 c 3.4 0 4.606 0.006 5 0 c -0.001 -0.757 0.006 -1.46 0.006 -1.986",
+    column1: "M -5.004 -0.992 c -1.673 0 -3.346 0 -5.019 0 c 0.023 0.664 0.023 1.325 0.023 1.986 c 3.4 0 4.606 0.006 3 0 c 0.6703 0 1.3407 0 2.011 0 c -0.012 -0.757 -0.005 -1.46 -0.005 -1.986",
     column2: "M 0.196 -0.989 c -3.3987 0 -4.396 -0.003 -5.196 0 c 0.0013 0.664 0.0027 1.328 0.004 1.992 c 1.73 -0.0073 3.46 -0.0147 5.19 -0.022 c 0 -0.6563 0 -1.3127 0 -1.969",
     column4: "M 8 -7 c 0 4.6743 0 9.3487 0 14.023 c 0.6707 0 1.3413 0 2.012 0 c 0 -4.6783 0 -9.3567 0 -14.035 c -0.6697 0 -1.3393 0 -2.009 0",
-    floor:"M 8 7 c -2.6667 0 -5.3333 0 -8 0 c 0 0.6667 0 1.3333 0 2 c 2.6667 0 5.3333 0 8 0 c 1.1 0 2 -0.9 2.024 -1.997 c -0.6747 0 -1.3493 0 -2.024 0 ",
-    ceiling:"M 10 -7 c 0 -1.1 -0.9 -2 -2 -2 c -2.6667 0 -5.3333 0 -8 0 c 0 0.6667 0 1.3333 0 2 c 2.6667 0 5.3333 0 8 0 c 0.669 0 1.338 0 2.007 0",
-    foundation:"M 0.204 0.982 c -0.868 0.8727 -1.736 1.7453 -2.604 2.618 c 0.4667 0.4667 0.9333 0.9333 1.4 1.4 c 1.6653 -1.6693 3.3307 -3.3387 2.245 -2.255 c 0.9183 -0.9153 1.8367 -1.8307 2.755 -2.746 c -0.88 0.224 -2.5307 0.6497 -3.796 0.977",
-    column3: "M -2.4 -3.6 l 2.6 2.6 l 3.8 0.994 l -5.008 -4.998 l -1.392 1.404 "
+    floor:"M 0 9 c 2.6667 0 5.3333 0 8 0 c 1.1 0 2 -0.9 2.024 -1.997 c -0.6747 0 -1.3493 0 -2.024 0 c -2.6667 -0.003 -5.3333 -0.003 -8 -0.003 c 0 0.6667 0 1.3333 0 2",
+    ceiling:"M 0 -7 a 1 0 0 0 0 10 0 a 1 1 0 0 0 0.007 0 c -0.007 -1.1 -0.907 -2 -2.007 -2 a 1 0 0 0 0 -8 0 a 1 1 0 0 0 0 0.056 c 0 0.6107 0 1.2773 0 1.944",
+    foundation:"M -2.4 3.6 c 0.4667 0.4667 0.9333 0.9333 1.4 1.4 c 1.6653 -1.6693 3.3307 -3.3387 2.245 -2.255 c 0.9183 -0.9153 1.8367 -1.8307 2.755 -2.745 c -0.88 0.223 -2.5307 0.6487 -3.796 0.976 c -0.868 0.8787 -1.736 1.7513 -2.604 2.624",
+    column3: "M -2.4 -3.6 c 0.8667 0.8667 1.7333 1.7333 2.6 2.6 c 1.2667 0.3313 2.5333 0.6627 3.8 0.994 c -1.6693 -1.666 -3.3387 -3.332 -5.008 -4.998 c -0.464 0.468 -0.928 0.936 -1.392 1.404 "
     
 
   }
@@ -81,58 +93,40 @@ M -1 -5 l -1.4 1.4 l 2.6 2.6 l 3.8 0.994 l -5.008 -4.998 M 0.196 -0.989 h -10.19
   return (
       <svg xmlns="https://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"  height="500px" viewBox="-20 -20 40 40" >
 
-        
+        {/* keyTimes="0; 0.25; 0.5; 0.75; 1" */}
 
         <path id="roof" >
-          <animate keyTimes="0; 0.25;0.26;  0.50; .55; 0.65; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-        
-          " />
-          <animate fill="freeze" attributeName="fill" dur="2s"repeatCount="indefinite" values="black; green" />
+          <animate attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.roof}; ${login.roof[0]}; ${login.roof[1]}; ${login.roof[1]}; ${createAccount.roof};${bank.roof};`} />
+          {/* <animate fill="freeze" attributeName="fill" dur="2s"repeatCount="indefinite" values="black; green" /> */}
         </path>
         <path id="foundation" >
-            <animate keyTimes="0; 0.25; 0.75; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-            
-            "/>
+            <animate attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.foundation}; ${login.foundation}; ${login.foundation}; ${createAccount.foundation};${bank.foundation};`}/>
         </path>
 
         <path id="column1" > 
-            <animate keyTimes="0;  1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-          
-            "/>
+            <animate attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.column1};${login.column1};${login.column1}; ${createAccount.column1};${bank.column1};`}/>
         </path>
         <path id="column2" > 
-          <animate keyTimes="0; 0.25; 0.5; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-          
-          "/>
+          <animate attributeName="d" dur="2s" repeatCount="indefinite"  values={`${bank.column2}; ${login.column2}; ${login.column2}; ${createAccount.column2};${bank.column2};`}/>
           
         </path>
         <path id="column3" > 
-          <animate keyTimes="0; 0.25; 0.75; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-              
-          " />
+          <animate attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.column3}; ${login.column3}; ${login.column3}; ${createAccount.column3};${bank.column3};`} />
         </path>
         <path id="column4"> 
 
-          <animate keyTimes="0;0.75; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-           
-        " />
+          <animate attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.column4} ;${login.column4};${login.column4}; ${createAccount.column4};${bank.column4};`}/>
 
       
         </path>
 
         <path id="floor" > 
-          <animate keyTimes="0; 0.25; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-   
-  
-          "/>
+          <animate  attributeName="d" dur="2s" repeatCount="indefinite"  values={`${bank.floor}; ${login.floor}; ${login.floor}; ${createAccount.floor};${bank.floor};`}/>
            
         </path>
         
         <path id="ceiling">
-          <animate keyTimes="0; 0.25; 0.5; 0.75; 1" attributeName="d" dur="4s" repeatCount="indefinite" values="
-              
-           
-          "/>
+          <animate  attributeName="d" dur="2s" repeatCount="indefinite" values={`${bank.ceiling}; ${login.ceiling}; ${login.ceiling}; ${createAccount.ceiling};${bank.ceiling};`}/>
 
         </path>
 </svg>
