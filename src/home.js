@@ -9,7 +9,7 @@ export const Home = () =>{
       text="You can move around using the navigation bar."
       body={(
       
-      <SymbolDecomp/>
+      <SymbolDecomp currentPage="bank"/>
       )}
     />    
   );  
