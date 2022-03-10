@@ -6,6 +6,7 @@ import {Balance} from './balance.js';
 import {AllData} from './alldata.js'
 import {Deposit} from './deposit.js';
 import {NavBar} from './navbar.js';
+
 import {HashRouter, Route, Routes} from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -24,7 +25,7 @@ const Spa = () =>{
             <Route path="/login/" element={<Login />} />
             <Route path="/deposit/" element={<Deposit/>} />
             <Route path="/withdraw/" element={<Withdraw/>} />
-            <Route path="/balance/" element={<Balance/>} />
+            {/* <Route path="/balance/" element={<Balance/>} /> */}
             <Route path="/alldata/" element={<AllData/>} />
           </Routes>
           

@@ -1,7 +1,7 @@
 import React from 'react';
 import {UserContext} from './index.js';
 import {Card} from './context.js';
-
+import { SymbolDecomp } from './symbolDecomp.js';
 export const CreateAccount = () => {
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
@@ -46,7 +46,9 @@ export const CreateAccount = () => {
               Password<br/>
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
               <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+              <SymbolDecomp currentPage="bank"/>
               </>
+              
             ):(
               <>
               <h5>Success</h5>

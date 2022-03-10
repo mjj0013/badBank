@@ -1,3 +1,5 @@
+import "./index.css"
+
 export const Card = (props) =>{
     function classes(){
       const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
@@ -7,7 +9,18 @@ export const Card = (props) =>{
   
     return (
       <div className={classes()} style={{maxWidth: "18rem"}}>
-        <div className="card-header">{props.header}</div>
+        {/* <div className="card-header">{props.header}</div> */}
+        <div className="card-img">
+          <svg  xmlns="http://www.w3.org/2000/svg" >
+              <linearGradient id="bg" gradientTransform="rotate(90)">
+                <stop offset="5%"  stop-color="gold" />
+                <stop offset="95%" stop-color="black" />
+              </linearGradient>
+
+            <rect width="100%" height="100%" fill="url(#bg)"/>
+          </svg>
+        </div>
+        
         <div className="card-body">
           {props.title && (<h5 className="card-title">{props.title}</h5>)}
           {props.text && (<p className="card-text">{props.text}</p>)}

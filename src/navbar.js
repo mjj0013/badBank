@@ -1,4 +1,5 @@
 import { currentSymbol } from "./symbolDecomp";
+import "./index.css"
 function homeOnHover() {
  
   document.getElementById("toHomeFoundation").beginElement();
@@ -64,6 +65,21 @@ function withdrawOnHover() {
   document.getElementById("roofToGreen").beginElement()
 }
 
+function depositOnHover() {
+
+  
+  document.getElementById("toDepositFoundation").beginElement();
+  document.getElementById("toDepositCol1").beginElement();
+  document.getElementById("toDepositCol2").beginElement();
+  document.getElementById("toDepositCol3").beginElement();
+  document.getElementById("toDepositCol4").beginElement();
+  document.getElementById("toDepositFloor").beginElement();
+  document.getElementById("toDepositCeiling").beginElement();
+  document.getElementById("toDepositRoof").beginElement();
+  document.getElementById("roofToGrey").beginElement()
+  
+}
+
 
 function returnToCurrent(e) {
   if(currentSymbol=="login" && e.target.id!="loginLink") loginOnHover();
@@ -79,7 +95,7 @@ function returnToCurrent(e) {
 export const NavBar=()=>{
   return(
     <div>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark navBarMain">
       <a id="homeLink" className="navbar-brand" href="#"  onMouseEnter={homeOnHover} onMouseLeave={(e)=>returnToCurrent(e)}>BadBank</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -93,7 +109,14 @@ export const NavBar=()=>{
             <a id="loginLink" className="nav-link" href="#/login/" onFocus={()=>currentSymbol="login"} onMouseEnter={loginOnHover} onMouseLeave={(e)=>returnToCurrent(e)}>Login</a>
           </li>
           <li className="nav-item">
-            <a id="depositLink" className="nav-link" href="#/deposit/" >Deposit</a>
+            <a id="depositLink" className="nav-link" href="#/deposit/" 
+              onMouseEnter={depositOnHover}
+              onMouseLeave={
+              (e) => {
+                document.getElementById("roofToBlack").beginElement()
+                returnToCurrent(e)
+              }
+            }>Deposit</a>
           </li>
           <li className="nav-item">
             <a id="withdrawLink" className="nav-link" href="#/withdraw/" 
@@ -105,9 +128,7 @@ export const NavBar=()=>{
               }
             }>Withdraw</a>
           </li>
-          <li className="nav-item">
-            <a id="balanceLink" className="nav-link" href="#/balance/" onMouseEnter={balanceOnHover} onMouseLeave={returnToCurrent}>Balance</a>
-          </li>
+
           <li className="nav-item">
             <a id="allDataLink" className="nav-link" href="#/alldata/">AllData</a>
           </li>  
