@@ -1,7 +1,7 @@
 import { currentSymbol } from "./symbolDecomp";
 import "./index.css"
 function homeOnHover() {
- 
+  document.getElementById("roofToFill").beginElement()
   document.getElementById("toHomeFoundation").beginElement();
   document.getElementById("toHomeCol1").beginElement();
   document.getElementById("toHomeCol2").beginElement();
@@ -10,11 +10,11 @@ function homeOnHover() {
   document.getElementById("toHomeFloor").beginElement();
   document.getElementById("toHomeCeiling").beginElement();
   document.getElementById("toHomeRoof").beginElement();
-
+  
 }
 
 function createAccountOnHover() {
-
+  document.getElementById("roofToFill").beginElement()
   document.getElementById("toCreateAccountFoundation").beginElement();
   document.getElementById("toCreateAccountCol1").beginElement();
   document.getElementById("toCreateAccountCol2").beginElement();
@@ -23,11 +23,11 @@ function createAccountOnHover() {
   document.getElementById("toCreateAccountFloor").beginElement();
   document.getElementById("toCreateAccountCeiling").beginElement();
   document.getElementById("toCreateAccountRoof").beginElement();
- 
+  
 }
 
 function loginOnHover() {
-  
+  document.getElementById("roofToFill").beginElement()
   document.getElementById("toLoginFoundation").beginElement();
   document.getElementById("toLoginCol1").beginElement();
   document.getElementById("toLoginCol2").beginElement();
@@ -36,24 +36,14 @@ function loginOnHover() {
   document.getElementById("toLoginFloor").beginElement();
   document.getElementById("toLoginCeiling").beginElement();
   document.getElementById("toLoginRoof").beginElement();
- 
+  
   
 }
 
-function balanceOnHover() {
-  
-  document.getElementById("toBalanceFoundation").beginElement();
-  document.getElementById("toBalanceCol1").beginElement();
-  document.getElementById("toBalanceCol2").beginElement();
-  document.getElementById("toBalanceCol3").beginElement();
-  document.getElementById("toBalanceCol4").beginElement();
-  document.getElementById("toBalanceFloor").beginElement();
-  document.getElementById("toBalanceCeiling").beginElement();
-  document.getElementById("toBalanceRoof").beginElement();
-  
-}
+
 
 function withdrawOnHover() {
+  document.getElementById("roofToClear").beginElement()
   document.getElementById("toWithdrawFoundation").beginElement();
   document.getElementById("toWithdrawCol1").beginElement();
   document.getElementById("toWithdrawCol2").beginElement();
@@ -62,12 +52,12 @@ function withdrawOnHover() {
   document.getElementById("toWithdrawFloor").beginElement();
   document.getElementById("toWithdrawCeiling").beginElement();
   document.getElementById("toWithdrawRoof").beginElement();
-  document.getElementById("roofToGreen").beginElement()
+  
 }
 
 function depositOnHover() {
 
-  
+  document.getElementById("roofToClear").beginElement()
   document.getElementById("toDepositFoundation").beginElement();
   document.getElementById("toDepositCol1").beginElement();
   document.getElementById("toDepositCol2").beginElement();
@@ -76,7 +66,7 @@ function depositOnHover() {
   document.getElementById("toDepositFloor").beginElement();
   document.getElementById("toDepositCeiling").beginElement();
   document.getElementById("toDepositRoof").beginElement();
-  document.getElementById("roofToGrey").beginElement()
+  
   
 }
 
@@ -113,20 +103,21 @@ export const NavBar=()=>{
               onMouseEnter={depositOnHover}
               onMouseLeave={
               (e) => {
-                document.getElementById("roofToBlack").beginElement()
+                
                 returnToCurrent(e)
-              }
-            }>Deposit</a>
+              }}
+              >Deposit</a>
           </li>
           <li className="nav-item">
             <a id="withdrawLink" className="nav-link" href="#/withdraw/" 
             onMouseEnter={withdrawOnHover} 
             onMouseLeave={
               (e) => {
-                document.getElementById("roofToBlack").beginElement()
+               
                 returnToCurrent(e)
               }
-            }>Withdraw</a>
+            }
+            >Withdraw</a>
           </li>
 
           <li className="nav-item">

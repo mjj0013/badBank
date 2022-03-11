@@ -13,8 +13,8 @@ export const Card = (props) =>{
         <div className="card-img">
           <svg  xmlns="http://www.w3.org/2000/svg" >
               <linearGradient id="bg" gradientTransform="rotate(90)">
-                <stop offset="5%"  stop-color="gold" />
-                <stop offset="95%" stop-color="black" />
+                <stop offset="5%"  stopColor="gold" />
+                <stop offset="95%" stopColor="black" />
               </linearGradient>
 
             <rect width="100%" height="100%" fill="url(#bg)"/>

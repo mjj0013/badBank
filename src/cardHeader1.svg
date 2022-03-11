@@ -1,0 +1,8 @@
+<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg" >
+    <!-- <linearGradient id="bg" gradientTransform="rotate(90)">
+      <stop offset="5%"  stop-color="gold" />
+      <stop offset="95%" stop-color="black" />
+    </linearGradient> -->
+
+    <rect  width="1000" height="500"/>
+</svg>
