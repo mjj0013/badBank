@@ -8,17 +8,9 @@ export const Deposit = ()=>{
   return (
     <Card bgcolor="primary" header="Deposit" status={status}
       body={
-        <SymbolDecomp currentPage="deposit"/>
+        <div></div>
         }
     />
   )
-  // return (
-    
-  //   <div>
-  //     <h1>Deposit</h1>
-  //     <SymbolDecomp currentPage="bank"/>
-      
-  //   </div>
-   
-  // )
+
 }

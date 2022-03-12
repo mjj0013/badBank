@@ -1,4 +1,4 @@
-import { currentSymbol } from "./symbolDecomp";
+
 import "./index.css"
 function homeOnHover() {
   document.getElementById("roofToFill").beginElement()
@@ -70,15 +70,25 @@ function depositOnHover() {
   
 }
 
-
 function returnToCurrent(e) {
-  if(currentSymbol=="login" && e.target.id!="loginLink") loginOnHover();
-  if(currentSymbol=="balance" && e.target.id!="balanceLink") balanceOnHover();
-  if(currentSymbol=="withdraw" && e.target.id!="withdrawLink") withdrawOnHover();
-  if(currentSymbol=="createAccount"  && e.target.id!="createAccountLink") createAccountOnHover();
-  if(currentSymbol=="bank" && e.target.id!="homeLink") homeOnHover();
+  console.log(window.location.href)
+  var path = window.location.href;
+  if(path[path.length-1]=="#") homeOnHover();
+  else {
+    var secondLast = path.substr(path.lastIndexOf("/",path.length-2));
+    console.log("secondLast", secondLast)
+    if(secondLast=="/CreateAccount/") createAccountOnHover();
+    else if(secondLast=="/login/") loginOnHover();
+    else if(secondLast=="/deposit/") depositOnHover();
+    else if(secondLast=="/withdraw/") withdrawOnHover();
+    else if(secondLast=="/alldata/") homeOnHover();
+    else homeOnHover();
+    
+  }
+  
 
 }
+
 
 
 
@@ -96,27 +106,18 @@ export const NavBar=()=>{
             <a id="createAccountLink" className="nav-link" href="#/CreateAccount/" onMouseEnter={createAccountOnHover} onMouseLeave={(e)=>returnToCurrent(e)}>Create Account</a>
           </li>
           <li className="nav-item">
-            <a id="loginLink" className="nav-link" href="#/login/" onFocus={()=>currentSymbol="login"} onMouseEnter={loginOnHover} onMouseLeave={(e)=>returnToCurrent(e)}>Login</a>
+            <a id="loginLink" className="nav-link" href="#/login/"  onMouseEnter={loginOnHover} onMouseLeave={(e)=>returnToCurrent(e)}>Login</a>
           </li>
           <li className="nav-item">
             <a id="depositLink" className="nav-link" href="#/deposit/" 
               onMouseEnter={depositOnHover}
-              onMouseLeave={
-              (e) => {
-                
-                returnToCurrent(e)
-              }}
+              onMouseLeave={(e) => {returnToCurrent(e)}}
               >Deposit</a>
           </li>
           <li className="nav-item">
             <a id="withdrawLink" className="nav-link" href="#/withdraw/" 
             onMouseEnter={withdrawOnHover} 
-            onMouseLeave={
-              (e) => {
-               
-                returnToCurrent(e)
-              }
-            }
+            onMouseLeave={(e) => {returnToCurrent(e)}}
             >Withdraw</a>
           </li>
 

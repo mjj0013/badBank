@@ -8,9 +8,9 @@ export const Card = (props) =>{
     }
   
     return (
-      <div className={classes()} style={{maxWidth: "18rem"}}>
-        {/* <div className="card-header">{props.header}</div> */}
-        <div className="card-img">
+      <div className={classes()} style={{zIndex:5, maxWidth: "18rem"}}>
+        <div className="card-header">{props.header}</div>
+        {/* <div className="card-img">
           <svg  xmlns="http://www.w3.org/2000/svg" >
               <linearGradient id="bg" gradientTransform="rotate(90)">
                 <stop offset="5%"  stopColor="gold" />
@@ -19,7 +19,7 @@ export const Card = (props) =>{
 
             <rect width="100%" height="100%" fill="url(#bg)"/>
           </svg>
-        </div>
+        </div> */}
         
         <div className="card-body">
           {props.title && (<h5 className="card-title">{props.title}</h5>)}

@@ -2,7 +2,7 @@ import {Home} from './home.js';
 import {CreateAccount} from './createaccount.js';
 import {Login} from './login.js';
 import {Withdraw} from './withdraw.js';
-import {Balance} from './balance.js';
+
 import {AllData} from './alldata.js'
 import {Deposit} from './deposit.js';
 import {NavBar} from './navbar.js';
@@ -10,6 +10,8 @@ import {NavBar} from './navbar.js';
 import {HashRouter, Route, Routes} from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { SymbolDecomp } from "./symbolDecomp"
 
 export const UserContext = React.createContext(null);
 const Spa = () =>{
@@ -25,12 +27,13 @@ const Spa = () =>{
             <Route path="/login/" element={<Login />} />
             <Route path="/deposit/" element={<Deposit/>} />
             <Route path="/withdraw/" element={<Withdraw/>} />
-            {/* <Route path="/balance/" element={<Balance/>} /> */}
             <Route path="/alldata/" element={<AllData/>} />
           </Routes>
           
         </div>
       </UserContext.Provider>      
+      <SymbolDecomp height="500px" currentPage="bank"/>
+      <div id="pageBg" />
     </HashRouter>
   );
 }

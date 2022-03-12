@@ -46,7 +46,7 @@ export const CreateAccount = () => {
               Password<br/>
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
               <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
-              <SymbolDecomp currentPage="bank"/>
+              
               </>
               
             ):(
