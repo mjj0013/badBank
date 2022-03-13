@@ -71,12 +71,21 @@ function depositOnHover() {
 }
 
 function returnToCurrent(e) {
-  console.log(window.location.href)
   var path = window.location.href;
+  var secondLast = path.substr(path.lastIndexOf("/",path.length-2));
+
+  var targetId = e.target.id.replace("Link","");
+  if(targetId=="home" && secondLast=="/#") return;
+  else if(targetId=="createAccount" && secondLast=="/CreateAccount/") return;
+  else if(targetId=="deposit" && secondLast=="/deposit/") return;
+  else if(targetId=="withdraw" && secondLast=="/withdraw/") return;
+  else if(targetId=="login" && secondLast=="/login/") return;
+  else if(targetId=="alldata" && secondLast=="/alldata/") return;
+  
   if(path[path.length-1]=="#") homeOnHover();
   else {
-    var secondLast = path.substr(path.lastIndexOf("/",path.length-2));
-    console.log("secondLast", secondLast)
+    
+    
     if(secondLast=="/CreateAccount/") createAccountOnHover();
     else if(secondLast=="/login/") loginOnHover();
     else if(secondLast=="/deposit/") depositOnHover();
