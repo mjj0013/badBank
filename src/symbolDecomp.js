@@ -96,6 +96,8 @@ const login = {
   // https://yqnn.github.io/svg-path-editor/
 
 
+  //https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/
+
   
 export const SymbolDecomp = (props) => {
   var height = props.height? props.height: "500px";
