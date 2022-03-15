@@ -14,10 +14,10 @@ import ReactDOM from 'react-dom';
 import { SymbolDecomp } from "./symbolDecomp"
 
 export const UserContext = React.createContext(null);
+
 const Spa = () =>{
   return (
     <HashRouter>
-     
       <NavBar />
       <UserContext.Provider value={{currentUserIdx:0,users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100, id:0}]}}>
         <div className="container" style={{padding: "20px"}}>
@@ -29,7 +29,6 @@ const Spa = () =>{
             <Route path="/withdraw/" element={<Withdraw/>} />
             <Route path="/alldata/" element={<AllData/>} />
           </Routes>
-          
         </div>
       </UserContext.Provider>      
       <SymbolDecomp height="500px" currentPage="bank"/>
@@ -41,7 +40,6 @@ const Spa = () =>{
 function render(Component) {
 	return ReactDOM.render(<Component />, document.getElementById("root"));
 }
-
 render(Spa)
 
-// ReactDOM.render(<Spa/>,document.getElementById('root'));
+

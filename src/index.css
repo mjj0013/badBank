@@ -6,6 +6,11 @@ svg {
     
     display:block;
 }
+
+#userGreeting {
+    color:white;
+    font-size:large;
+}
 #pageBg {
     z-index:0;
     

@@ -46,6 +46,9 @@ export const Login = () =>{
     if(userEntry!='') {
       if(password == userEntry.password) {
         ctx.currentUserIdx = userEntry.id;
+        console.log("success")
+        document.getElementById("userGreeting").innerHTML = `Greetings, ${ctx.users[ctx.currentUserIdx].name}`
+        document.getElementById("userGreeting").display = 'block'
       }
     }
   }  
@@ -62,8 +65,7 @@ export const Login = () =>{
       <Card  bgcolor="light" txtcolor="dark" header="Login" status={status}
       body={show ? (  
               <>
-              {/* Name<br/>
-              <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/> */}
+              
               Email address<br/>
               <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e=>{ handleEmailChange(e);}
               }/><br/>

@@ -71,20 +71,7 @@ function depositOnHover() {
   
   
 }
-function allDataOnHover() {
 
-  document.getElementById("roofToFill").beginElement()
-  document.getElementById("toHomeFoundation").beginElement();
-  document.getElementById("toHomeCol1").beginElement();
-  document.getElementById("toHomeCol2").beginElement();
-  document.getElementById("toHomeCol3").beginElement();
-  document.getElementById("toHomeCol4").beginElement();
-  document.getElementById("toHomeFloor").beginElement();
-  document.getElementById("toHomeCeiling").beginElement();
-  document.getElementById("toHomeRoof").beginElement();
-  
-  
-}
 
 function returnToCurrent(e) {
   var path = window.location.href;
@@ -115,7 +102,7 @@ function returnToCurrent(e) {
 
 
 
-export const NavBar=()=>{
+export const NavBar=(intUser)=>{
   const ctx = React.useContext(UserContext);  
   return(
     <div>
@@ -158,9 +145,10 @@ export const NavBar=()=>{
             </li>  
 
           </ul>
-         {ctx? <span className="navbar-text">
-            Welcome, {ctx.users[ctx.currentUserIdx].name}
-          </span>:<></>}
+          <span id="userGreeting" className="navbar-text">
+          
+          </span>
+         
         </div>
       </nav>
     </div>
