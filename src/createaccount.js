@@ -36,7 +36,7 @@ export const CreateAccount = () => {
   }
 
   return (
-    <Card bgcolor="primary" header="Create Account" status={status}
+    <Card bgcolor="light" txtcolor="dark" header="Create Account" status={status}
       body={show ? (  
               <>
               Name<br/>

@@ -59,7 +59,7 @@ export const Login = () =>{
    return (
     <div>
       
-      <Card bgcolor="primary" header="Login" status={status}
+      <Card  bgcolor="light" txtcolor="dark" header="Login" status={status}
       body={show ? (  
               <>
               {/* Name<br/>

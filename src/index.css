@@ -13,9 +13,16 @@ svg {
     left:0px; 
     width:100vw; 
     height:100vh; 
-    background:radial-gradient(circle at 100%, rgb(192, 192, 192) 30%, rgba(2,0,36,1) 61%, rgba(9,9,121,1) 65%);
-    
-    /*radial-gradient(circle at 0%, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212,255,1) 100%);*/
+    /* background:radial-gradient(circle at 100%, rgb(192, 192, 192) 30%, rgba(2,0,36,1) 61%, rgba(9,9,121,1) 65%); */
+    /* background: linear-gradient(90deg, rgba(0,212,255,1) 25%, rgba(9,9,121,1) 98%, rgba(2,0,36,1) 100%); */
+    /* radial-gradient(ellipse closest-side at right, hsla(220, 90%, 81%, .6) 0%,  transparent  33%, hsla(220, 90%, 41%, .6) 66%) */
+    background: 
+            radial-gradient(circle farthest-corner at 50% top, hsla(240,85%,15%,.4) 0%, hsla(240,85%,25%,.4) 33%, hsla(240,85%,15%,.4) 66%),
+            radial-gradient(circle farthest-side at right 50%, 
+                hsla(98, 46%, 31%, .8) 0%,
+                hsla(98, 46%, 56%, 0.4) 33%,
+                hsla(98, 46%, 31%, .8) 66%),
+            radial-gradient(circle farthest-side at left 50%, hsla(120, 85%, 5%, .8) 0%,hsla(120, 85%, 10%, .4) 33%, hsla(120, 85%, 15%, .4) 68%);
 }
 
 
@@ -30,8 +37,31 @@ svg {
 
 
 .navBarMain {
-    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,215,0,1) 100%);
+    background: radial-gradient(ellipse farthest-corner at left bottom,
+        hsla(51, 100%, 15%, .4) 0%,
+        hsla(51, 100%, 20%, .45) 25%,
+        hsla(51, 100%, 25%, .5) 50%,
+        hsla(51, 100%, 30%, .6) 75%,
+        hsla(51, 100%, 46%, .7) 80%) 30%, 
+      radial-gradient(ellipse farthest-corner at right bottom,
+      hsla(51, 100%, 0%, .6) 10%,
+      hsla(51, 100%, 20%, .7) 25%,
+      hsla(51, 100%, 50%, .8) 50%,
+      hsla(51, 100%, 25%, .6) 65%,
+       hsla(51, 100%, 15%, .4) 100%) 65%
+      ;
     z-index:5;
+}
+
+
+.myTable{
+   
+    z-index:9;
+    display:block;
+    position:absolute;
+    top:10%;
+    left:5%;
+    width:30rem;
 }
 
 

@@ -6,7 +6,7 @@ export const Deposit = ()=>{
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
   return (
-    <Card bgcolor="primary" header="Deposit" status={status}
+    <Card bgcolor="light" txtcolor="dark" header="Deposit" status={status}
       body={
         <div></div>
         }
