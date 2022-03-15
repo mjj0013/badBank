@@ -1,5 +1,7 @@
 
 import "./index.css"
+import React from 'react';
+import {UserContext} from './index.js';
 function homeOnHover() {
   document.getElementById("roofToFill").beginElement()
   document.getElementById("toHomeFoundation").beginElement();
@@ -114,6 +116,7 @@ function returnToCurrent(e) {
 
 
 export const NavBar=()=>{
+  const ctx = React.useContext(UserContext);  
   return(
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark navBarMain">
@@ -124,7 +127,7 @@ export const NavBar=()=>{
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <a id="createAccountLink" className="nav-link" href="#/CreateAccount/" onMouseEnter={createAccountOnHover} onMouseLeave={(e)=>returnToCurrent(e)}
                 data-bs-trigger="hover" data-bs-toggle="popover" title="Create a new account to access your bank account"
@@ -155,6 +158,9 @@ export const NavBar=()=>{
             </li>  
 
           </ul>
+         {ctx? <span className="navbar-text">
+            Welcome, {ctx.users[ctx.currentUserIdx].name}
+          </span>:<></>}
         </div>
       </nav>
     </div>

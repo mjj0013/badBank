@@ -9,9 +9,9 @@ export const Card = (props) =>{
     }
   
     return (
-      <div className={classes()} style={{zIndex:5, maxWidth: "18rem"}}>
+      <div className={classes()} style={{zIndex:5, maxWidth: "20rem"}}>
         <div className="card-header">{props.header}</div>
-        <object className="card-img" data="../public/coins.jpg" alt="Card image"></object>
+        {/* <object className="card-img" data="../public/coins.jpg" alt="Card image"></object> */}
      
         <div className="card-body">
           {props.title && (<h5 className="card-title">{props.title}</h5>)}

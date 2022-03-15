@@ -1,13 +1,13 @@
 import React from 'react';
 import {UserContext} from './index.js';
 
+import {Card} from './context.js';
 import "./index.css"
 
 
 export const AllData = () =>{
   const ctx = React.useContext(UserContext);
   var userData = ctx.users
-  
   let allUsers = userData.map((item,idx)=> {return (
     <tr key={idx}>
      
@@ -16,28 +16,33 @@ export const AllData = () =>{
       <td>{item.password}</td>
     </tr>
   )})
-  console.log("userData", userData)
-  return (
-    <div>
-    <h5>All Data in Store</h5>
-    
-    <table className="table table-light myTable">
-      <thead>
-        <tr>
-          
-          <th scope="col">Email</th>
-          <th scope="col">Name</th>
-          <th scope="col">Password</th>
-        </tr>
-      </thead>
+  return(
+  <Card bgcolor="light" txtcolor="dark" header="Deposit" status={status}
+      body={
+        <div>
+        <h5>All Data in Store</h5>
+        
+          <table className="table table-light myTable">
+            <thead>
+              <tr>
+                
+                <th scope="col">Email</th>
+                <th scope="col">Name</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
 
-      <tbody>
-        {allUsers}
-      </tbody>
-    </table>
+            <tbody>
+              {allUsers}
+            </tbody>
+          </table>
 
 
-    {/* {JSON.stringify(ctx)}<br/> */}
-    </div>
-  );
+      
+        </div>
+        }
+    />
+  )
+  
+
 }

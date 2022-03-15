@@ -116,11 +116,11 @@ export const SymbolDecomp = (props) => {
           <feComposite operator="out" in="SourceGraphic" result="comp2" />
 
 
-            <feFlood floodColor='black' floodOpacity='.95' result='color' />
+          <feFlood floodColor='black' floodOpacity='.95' result='color' />
            
-            <feComposite operator='in' in='color' in2='comp2' result="innerShadow"/>
-            <feComposite operator='in' in='innerShadow' in2='SourceGraphic' result="innerShadow"/>
-            </filter>
+          <feComposite operator='in' in='color' in2='comp2' result="innerShadow"/>
+          <feComposite operator='in' in='innerShadow' in2='SourceGraphic' result="innerShadow"/>
+        </filter>
         <path id="roof"   d={`${pageSymbols[currentPage].roof}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".5px">
             <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>
             <animate  id="toCreateAccountRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.roof}`}fill="freeze" />
@@ -167,7 +167,7 @@ export const SymbolDecomp = (props) => {
             <animate  id="toWithdrawCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column3}`} fill="freeze" />
             <animate  id="toDepositCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column3}`} fill="freeze" />
         </path>
-        <path id="column4"  d={`${pageSymbols[currentPage].column4}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
+        <path id="column4"   d={`${pageSymbols[currentPage].column4}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
             <animate  id="toHomeCol4" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.column4}`}fill="freeze"/>
             <animate  id="toCreateAccountCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column4}`}fill="freeze" />
             <animate  id="toLoginCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column4}`}fill="freeze" />
@@ -176,7 +176,7 @@ export const SymbolDecomp = (props) => {
             <animate  id="toDepositCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column4}`} fill="freeze" />
         </path>
 
-        <path id="floor"  d={`${pageSymbols[currentPage].floor}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
+        <path id="floor"    d={`${pageSymbols[currentPage].floor}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
             <animate  id="toHomeFloor" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.floor}`}fill="freeze"/>
             <animate  id="toCreateAccountFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.floor}`}fill="freeze" />
             <animate  id="toLoginFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.floor}`}fill="freeze" />
@@ -185,7 +185,7 @@ export const SymbolDecomp = (props) => {
             <animate  id="toDepositFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.floor}`} fill="freeze" />
         </path>
         
-        <path id="ceiling"  d={`${pageSymbols[currentPage].ceiling}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px">
+        <path id="ceiling"   d={`${pageSymbols[currentPage].ceiling}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px">
             <animate  id="toHomeCeiling" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.ceiling}`}fill="freeze"/>
             <animate  id="toCreateAccountCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.ceiling}`}fill="freeze" />
             <animate  id="toLoginCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.ceiling}`}fill="freeze" />

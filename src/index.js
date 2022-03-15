@@ -19,7 +19,7 @@ const Spa = () =>{
     <HashRouter>
      
       <NavBar />
-      <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
+      <UserContext.Provider value={{currentUserIdx:0,users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100, id:0}]}}>
         <div className="container" style={{padding: "20px"}}>
           <Routes>
             <Route path="/" exact element={<Home />} />

@@ -45,7 +45,7 @@ export const Login = () =>{
     console.log('userEntry',userEntry)
     if(userEntry!='') {
       if(password == userEntry.password) {
-
+        ctx.currentUserIdx = userEntry.id;
       }
     }
   }  
