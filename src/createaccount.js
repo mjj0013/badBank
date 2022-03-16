@@ -11,19 +11,44 @@ export const CreateAccount = () => {
   const ctx = React.useContext(UserContext);  
 
   function validate(field, label){
-      if (!field) {
-        setStatus('Error: ' + label);
-        setTimeout(() => setStatus(''),3000);
-        return false;
-      }
+    if(label == 'name') {
+      if(field.length ==0 || !field) return 'Name is empty'
+      else return true;
+    }
+    if(label == 'email') {
+      if(field.length ==0 || !field) return 'Email is empty'
+      else return true;
+    }
+    if(label == 'password') {
+      if(!field) return 'Password is empty'
+      else if(field.length < 8) return 'Password is less than 8 characters long'
+      else return true;
+    }
+   
       return true;
   }
 
   function handleCreate(){
     console.log(name,email,password);
-    if (!validate(name,     'name'))     return;
-    if (!validate(email,    'email'))    return;
-    if (!validate(password, 'password')) return;
+    var nameStatus=validate(name,     'name');
+    var emailStatus=validate(email,    'email');
+    var passwordStatus = validate(password, 'password');
+    var tempStatus = 'Error: ';
+
+
+
+    if(typeof nameStatus == 'string' || typeof emailStatus== 'string' || typeof passwordStatus=='string') {
+      if(typeof nameStatus == 'string')  tempStatus += nameStatus
+      if(typeof emailStatus== 'string') tempStatus += (typeof nameStatus=='string')?  ', '+emailStatus : emailStatus;
+      if(typeof passwordStatus=='string') tempStatus += (tempStatus.length>2)?  ', '+passwordStatus : passwordStatus;
+
+
+      setStatus(tempStatus);
+      setTimeout(() => setStatus(''),3000);
+
+      return;
+    }
+
     
     ctx.users.push({name,email,password,balance:100, id:ctx.users.length});
     setShow(false);
@@ -40,6 +65,7 @@ export const CreateAccount = () => {
     <Card bgcolor="light" txtcolor="dark" header="Create Account" status={status}
       body={show ? (  
               <>
+              <div id="createAccountAlert" className="alert alert-danger" style={{display:'none'}}role="alert"></div>
               Name<br/>
               <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
               Email address<br/>

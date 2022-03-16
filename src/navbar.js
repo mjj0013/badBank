@@ -105,52 +105,46 @@ function returnToCurrent(e) {
 export const NavBar=(intUser)=>{
   const ctx = React.useContext(UserContext);  
   return(
-    <div>
+   
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark navBarMain">
         <a id="homeLink" className="navbar-brand" href="#"  onMouseEnter={homeOnHover} onMouseLeave={(e)=>returnToCurrent(e)}
-          data-bs-trigger="hover" data-bs-toggle="popover" title="Return to Bad-Bank landing page"
-        >BadBank</a>
+          data-bs-trigger="hover" data-bs-toggle="popover" title="Return to Bad-Bank landing page">BadBank</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mr-auto">
+       
+        <div className="collapse navbar-collapse" id="navbarNav" >
+          <ul className="navbar-nav mr-auto" >
             <li className="nav-item">
               <a id="createAccountLink" className="nav-link" href="#/CreateAccount/" onMouseEnter={createAccountOnHover} onMouseLeave={(e)=>returnToCurrent(e)}
-                data-bs-trigger="hover" data-bs-toggle="popover" title="Create a new account to access your bank account"
-              >Create Account</a>
+                data-bs-trigger="hover" data-bs-toggle="popover" title="Create a new account to access your bank account">Create Account</a>
             </li>
             <li className="nav-item">
               <a id="loginLink" className="nav-link" href="#/login/"  onMouseEnter={loginOnHover} onMouseLeave={(e)=>returnToCurrent(e)}
-                data-bs-trigger="hover" data-bs-toggle="popover" title="Enter your credentials to access your bank account"
-              >Login</a>
+                data-bs-trigger="hover" data-bs-toggle="popover" title="Enter your credentials to access your bank account">Login</a>
             </li>
             <li className="nav-item">
               <a id="depositLink" className="nav-link" href="#/deposit/" data-bs-trigger="hover" data-bs-toggle="popover" title="Transfer funds into your bank account"
                 onMouseEnter={depositOnHover}
-                onMouseLeave={(e) => {returnToCurrent(e)}}
-                >Deposit</a>
+                onMouseLeave={(e) => {returnToCurrent(e)}}>Deposit</a>
             </li>
             <li className="nav-item" >
               <a id="withdrawLink" className="nav-link" href="#/withdraw/" data-bs-trigger="hover" data-bs-toggle="popover" title="Remove funds from your bank account"
               onMouseEnter={withdrawOnHover} 
-              onMouseLeave={(e) => {returnToCurrent(e)}}
-              >Withdraw</a>
+              onMouseLeave={(e) => {returnToCurrent(e)}}>Withdraw</a>
             </li>
 
             <li className="nav-item">
               <a id="allDataLink" className="nav-link" href="#/alldata/"
-              data-bs-trigger="hover" data-bs-toggle="popover" title="(ADMIN) View all bank accounts on record"
-              >AllData</a>
+              data-bs-trigger="hover" data-bs-toggle="popover" title="(ADMIN) View all bank accounts on record">AllData</a>
             </li>  
 
           </ul>
-          <span id="userGreeting" className="navbar-text">
-          
-          </span>
+          <span id="userGreeting" className="navbar-text"></span>
          
         </div>
+      
       </nav>
-    </div>
+
   );
 }
