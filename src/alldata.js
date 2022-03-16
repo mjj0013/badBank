@@ -17,7 +17,7 @@ export const AllData = () =>{
     </tr>
   )})
   return(
-  <Card bgcolor="light" txtcolor="dark" header="All Data in Store" status={status}
+  <Card maxWidth="25rem" bgcolor="light" txtcolor="dark" header="All Data in Store"
       body={
         <div>
      

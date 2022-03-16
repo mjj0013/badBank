@@ -110,17 +110,7 @@ export const SymbolDecomp = (props) => {
       <svg className="bgIcon" xmlns="https://www.w3.org/2000/svg"  height={height} viewBox="-20 -20 40 40" >
 
         {/* keyTimes="0; 0.25; 0.5; 0.75; 1" */}
-        <filter id="dropShadowFilter">
         
-          <feGaussianBlur stdDeviation='1' result="blur" />
-          <feComposite operator="out" in="SourceGraphic" result="comp2" />
-
-
-          <feFlood floodColor='black' floodOpacity='.95' result='color' />
-           
-          <feComposite operator='in' in='color' in2='comp2' result="innerShadow"/>
-          <feComposite operator='in' in='innerShadow' in2='SourceGraphic' result="innerShadow"/>
-        </filter>
         <path id="roof"   d={`${pageSymbols[currentPage].roof}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".5px">
             <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>
             <animate  id="toCreateAccountRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.roof}`}fill="freeze" />

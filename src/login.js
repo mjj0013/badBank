@@ -49,6 +49,7 @@ export const Login = () =>{
         console.log("success")
         document.getElementById("userGreeting").innerHTML = `Greetings, ${ctx.users[ctx.currentUserIdx].name}`
         document.getElementById("userGreeting").display = 'block'
+        setShow(false);
       }
     }
   }  
@@ -73,11 +74,17 @@ export const Login = () =>{
               <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
               <button type="submit" className="btn btn-light" onClick={handleSubmit}>Login</button>
               </>
-            ):(
-              <>
-              <h5>Success</h5>
-              {/* <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button> */}
-              </>
+            ): (
+              <div style={{height:'120px'}}>
+                <h5 id="successText">Success</h5>
+
+                <svg id="successIcon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="green" className="bi bi-check-circle" viewBox="0 0 25 25">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                </svg>
+               
+                <button   type="submit" className="btn btn-dark successButton" onClick={clearForm}>Return</button>
+              </div>
             )
         }
     />

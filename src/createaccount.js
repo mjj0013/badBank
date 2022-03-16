@@ -11,22 +11,20 @@ export const CreateAccount = () => {
   const ctx = React.useContext(UserContext);  
 
   function validate(field, label){
-  
-      if(label == 'name') {
-        if(field.length ==0 || !field) return 'Name is empty'
-        else return true;
-      }
-      if(label == 'email') {
-        if(field.length ==0 || !field) return 'Email is empty'
-        else return true;
-      }
-      if(label == 'password') {
-        
-        if(field.length < 8) return 'Password is less than 8 characters long'
-        else return true;
-      }
-     
-      return true;
+    if(label == 'name') {
+      if(field.length==0 || !field) return 'Name is empty'
+      else return true;
+    }
+    if(label == 'email') {
+      if(field.length==0 || !field) return 'Email is empty'
+      else if(!isValidEmail(field)) return 'Email has invalid format'
+      else return true;
+    }
+    if(label == 'password') {
+      if(field.length < 8) return 'Password is less than 8 characters long'
+      else return true;
+    }
+    return true;
     
   }
 
@@ -60,6 +58,10 @@ export const CreateAccount = () => {
     ctx.users.push({name:tempName,email:tempEmail,password:tempPassword,balance:100, id:ctx.users.length})
     setShow(false);
   }    
+  function isValidEmail(E) {
+    var r = new RegExp(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/);
+    return E.match(r)!=null
+}
 
   function clearForm(){
     setName('');
