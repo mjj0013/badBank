@@ -2,6 +2,7 @@
 import "./index.css"
 import React from 'react';
 import {UserContext} from './index.js';
+var currentForm = "home"
 function homeOnHover() {
   document.getElementById("roofToFill").beginElement()
   document.getElementById("toHomeFoundation").beginElement();
@@ -12,6 +13,8 @@ function homeOnHover() {
   document.getElementById("toHomeFloor").beginElement();
   document.getElementById("toHomeCeiling").beginElement();
   document.getElementById("toHomeRoof").beginElement();
+
+  currentForm = "home"
   
 }
 
@@ -25,6 +28,8 @@ function createAccountOnHover() {
   document.getElementById("toCreateAccountFloor").beginElement();
   document.getElementById("toCreateAccountCeiling").beginElement();
   document.getElementById("toCreateAccountRoof").beginElement();
+
+  currentForm = "createAccount"
   
 }
 
@@ -38,7 +43,7 @@ function loginOnHover() {
   document.getElementById("toLoginFloor").beginElement();
   document.getElementById("toLoginCeiling").beginElement();
   document.getElementById("toLoginRoof").beginElement();
-  
+  currentForm = "login"
   
 }
 
@@ -54,12 +59,11 @@ function withdrawOnHover() {
   document.getElementById("toWithdrawFloor").beginElement();
   document.getElementById("toWithdrawCeiling").beginElement();
   document.getElementById("toWithdrawRoof").beginElement();
-  
+  currentForm = "withdraw"
 }
 
 function depositOnHover() {
-
-  document.getElementById("roofToClear").beginElement()
+  if(currentForm!="withdraw") document.getElementById("roofToClear").beginElement()
   document.getElementById("toDepositFoundation").beginElement();
   document.getElementById("toDepositCol1").beginElement();
   document.getElementById("toDepositCol2").beginElement();
@@ -68,7 +72,7 @@ function depositOnHover() {
   document.getElementById("toDepositFloor").beginElement();
   document.getElementById("toDepositCeiling").beginElement();
   document.getElementById("toDepositRoof").beginElement();
-  
+  currentForm = "deposit"
   
 }
 

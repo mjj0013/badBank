@@ -103,87 +103,84 @@ export const SymbolDecomp = (props) => {
   var height = props.height? props.height: "500px";
   var currentPage = props.currentPage? props.currentPage: "bank";
   const pageSymbols = {"bank":bank, "withdraw":withdraw, "balance":balance, "login":login, "createAccount":createAccount}
-  console.log("height", height)
-
-  console.log("pageSymbols[currentPage]", pageSymbols[currentPage])
   return (
-      <svg className="bgIcon" xmlns="https://www.w3.org/2000/svg"  height={height} viewBox="-20 -20 40 40" >
+    <svg className="bgIcon" xmlns="https://www.w3.org/2000/svg"  height={height} viewBox="-20 -20 40 40" >
 
-        {/* keyTimes="0; 0.25; 0.5; 0.75; 1" */}
-        
-        <path id="roof"   d={`${pageSymbols[currentPage].roof}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".5px">
-            <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>
-            <animate  id="toCreateAccountRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.roof}`}fill="freeze" />
-            <animate  id="toLoginRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.roof}`}fill="freeze" />
-            <animate  id="toBalanceRoof" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.roof}`} fill="freeze" />
-            <animate  id="toWithdrawRoof" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.roof}`} fill="freeze" />
-            <animate  id="toDepositRoof" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.roof}`} fill="freeze" />
-           
-            <animate id="roofToFill" fill="freeze" begin="indefinite" attributeName="fill" dur=".5s" to="rgba(0,0,0,1.0)" />
-            <animate id="roofToClear" fill="freeze" begin="indefinite" attributeName="fill" dur=".5s" to="rgba(0,0,0,0)" />
-        </path>
-        <path id="foundation"   d={`${pageSymbols[currentPage].foundation}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round"  strokeWidth=".1px">
-            <animate  id="toHomeFoundation" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.foundation}`}fill="freeze"/>
-            <animate  id="toCreateAccountFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.foundation}`}fill="freeze" />
-            <animate  id="toLoginFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.foundation}`}fill="freeze" />
-            <animate  id="toBalanceFoundation" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.foundation}`} fill="freeze" />
-            <animate  id="toWithdrawFoundation" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.foundation}`} fill="freeze" />
-            <animate  id="toDepositFoundation" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.foundation}`} fill="freeze" />
-        </path>
-
-        <path id="column1" d={`${pageSymbols[currentPage].column1}`}  fill="rgba(0,0,0,1.0)" stroke="black"  strokeWidth=".1px"> 
-            <animate  id="toHomeCol1" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.column1}`}fill="freeze"/>
-            <animate  id="toCreateAccountCol1" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column1}`}fill="freeze" />
-            <animate  id="toLoginCol1" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column1}`}fill="freeze" />
-            <animate  id="toBalanceCol1" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.column1}`} fill="freeze" />
-            <animate  id="toWithdrawCol1" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column1}`} fill="freeze" />
-            <animate  id="toDepositCol1" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column1}`} fill="freeze" />
-           
-        </path>
-        <path id="column2" d={`${pageSymbols[currentPage].column2}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px" > 
-            <animate  id="toHomeCol2" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.column2}`}fill="freeze"/>
-            <animate  id="toCreateAccountCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column2}`}fill="freeze" />
-            <animate  id="toLoginCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column2}`}fill="freeze" />
-            <animate  id="toBalanceCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.column2}`} fill="freeze" />
-            <animate  id="toWithdrawCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column2}`} fill="freeze" />
-            <animate  id="toDepositCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column2}`} fill="freeze" />
+      {/* keyTimes="0; 0.25; 0.5; 0.75; 1" */}
+      
+      <path id="roof"   d={`${pageSymbols[currentPage].roof}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".5px">
+          <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>
+          <animate  id="toCreateAccountRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.roof}`}fill="freeze" />
+          <animate  id="toLoginRoof" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${login.roof}`}fill="freeze" />
+         
+          <animate  id="toWithdrawRoof" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.roof}`} fill="freeze" />
+          <animate  id="toDepositRoof" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.roof}`} fill="freeze" />
           
-        </path>
-        <path id="column3"  d={`${pageSymbols[currentPage].column3}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px" > 
-            <animate  id="toHomeCol3" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.column3}`}fill="freeze"/>
-            <animate  id="toCreateAccountCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column3}`}fill="freeze" />
-            <animate  id="toLoginCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column3}`}fill="freeze" />
-            <animate  id="toBalanceCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.column3}`} fill="freeze" />
-            <animate  id="toWithdrawCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column3}`} fill="freeze" />
-            <animate  id="toDepositCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column3}`} fill="freeze" />
-        </path>
-        <path id="column4"   d={`${pageSymbols[currentPage].column4}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
-            <animate  id="toHomeCol4" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.column4}`}fill="freeze"/>
-            <animate  id="toCreateAccountCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column4}`}fill="freeze" />
-            <animate  id="toLoginCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column4}`}fill="freeze" />
-            <animate  id="toBalanceCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.column4}`} fill="freeze" />
-            <animate  id="toWithdrawCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column4}`} fill="freeze" />
-            <animate  id="toDepositCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column4}`} fill="freeze" />
-        </path>
+          <animate id="roofToFill" fill="freeze" begin="indefinite" attributeName="fill" dur=".75s" to="rgba(0,0,0,1.0)" />
+          <animate id="roofToClear" fill="freeze" begin="indefinite" attributeName="fill" dur=".75s" to="rgba(0,0,0,0)" />
+      </path>
+      <path id="foundation"   d={`${pageSymbols[currentPage].foundation}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round"  strokeWidth=".1px">
+          <animate  id="toHomeFoundation" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.foundation}`}fill="freeze"/>
+          <animate  id="toCreateAccountFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.foundation}`}fill="freeze" />
+          <animate  id="toLoginFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.foundation}`}fill="freeze" />
+     
+          <animate  id="toWithdrawFoundation" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.foundation}`} fill="freeze" />
+          <animate  id="toDepositFoundation" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.foundation}`} fill="freeze" />
+      </path>
 
-        <path id="floor"    d={`${pageSymbols[currentPage].floor}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
-            <animate  id="toHomeFloor" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.floor}`}fill="freeze"/>
-            <animate  id="toCreateAccountFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.floor}`}fill="freeze" />
-            <animate  id="toLoginFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.floor}`}fill="freeze" />
-            <animate  id="toBalanceFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.floor}`} fill="freeze" />
-            <animate  id="toWithdrawFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.floor}`} fill="freeze" />
-            <animate  id="toDepositFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.floor}`} fill="freeze" />
-        </path>
+      <path id="column1" d={`${pageSymbols[currentPage].column1}`}  fill="rgba(0,0,0,1.0)" stroke="black"  strokeWidth=".1px"> 
+          <animate  id="toHomeCol1" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column1}`}fill="freeze"/>
+          <animate  id="toCreateAccountCol1" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${createAccount.column1}`}fill="freeze" />
+          <animate  id="toLoginCol1" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${login.column1}`}fill="freeze" />
         
-        <path id="ceiling"   d={`${pageSymbols[currentPage].ceiling}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px">
-            <animate  id="toHomeCeiling" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.ceiling}`}fill="freeze"/>
-            <animate  id="toCreateAccountCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.ceiling}`}fill="freeze" />
-            <animate  id="toLoginCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.ceiling}`}fill="freeze" />
-            <animate  id="toBalanceCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${balance.ceiling}`} fill="freeze" />
-            <animate  id="toWithdrawCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.ceiling}`} fill="freeze" />
-            <animate  id="toDepositCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.ceiling}`} fill="freeze" />
-        </path>
-</svg>
+          <animate  id="toWithdrawCol1" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.column1}`} fill="freeze" />
+          <animate  id="toDepositCol1" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${deposit.column1}`} fill="freeze" />
+          
+      </path>
+      <path id="column2" d={`${pageSymbols[currentPage].column2}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px" > 
+          <animate  id="toHomeCol2" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column2}`}fill="freeze"/>
+          <animate  id="toCreateAccountCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column2}`}fill="freeze" />
+          <animate  id="toLoginCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column2}`}fill="freeze" />
+      
+          <animate  id="toWithdrawCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column2}`} fill="freeze" />
+          <animate  id="toDepositCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column2}`} fill="freeze" />
+        
+      </path>
+      <path id="column3"  d={`${pageSymbols[currentPage].column3}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px" > 
+          <animate  id="toHomeCol3" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column3}`}fill="freeze"/>
+          <animate  id="toCreateAccountCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column3}`}fill="freeze" />
+          <animate  id="toLoginCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column3}`}fill="freeze" />
+     
+          <animate  id="toWithdrawCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column3}`} fill="freeze" />
+          <animate  id="toDepositCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column3}`} fill="freeze" />
+      </path>
+      <path id="column4"   d={`${pageSymbols[currentPage].column4}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
+          <animate  id="toHomeCol4" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column4}`}fill="freeze"/>
+          <animate  id="toCreateAccountCol4" attributeName="d"  begin="indefinite"  dur=".75s" repeatCount="1" to={`${createAccount.column4}`}fill="freeze" />
+          <animate  id="toLoginCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column4}`}fill="freeze" />
+         
+          <animate  id="toWithdrawCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column4}`} fill="freeze" />
+          <animate  id="toDepositCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column4}`} fill="freeze" />
+      </path>
+
+      <path id="floor"    d={`${pageSymbols[currentPage].floor}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px"> 
+          <animate  id="toHomeFloor" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.floor}`}fill="freeze"/>
+          <animate  id="toCreateAccountFloor" attributeName="d"  begin="indefinite"  dur=".75s" repeatCount="1" to={`${createAccount.floor}`}fill="freeze" />
+          <animate  id="toLoginFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.floor}`}fill="freeze" />
+        
+          <animate  id="toWithdrawFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.floor}`} fill="freeze" />
+          <animate  id="toDepositFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.floor}`} fill="freeze" />
+      </path>
+      
+      <path id="ceiling"   d={`${pageSymbols[currentPage].ceiling}`}  fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".1px">
+          <animate  id="toHomeCeiling" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.ceiling}`}fill="freeze"/>
+          <animate  id="toCreateAccountCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.ceiling}`}fill="freeze" />
+          <animate  id="toLoginCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.ceiling}`}fill="freeze" />
+        
+          <animate  id="toWithdrawCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.ceiling}`} fill="freeze" />
+          <animate  id="toDepositCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.ceiling}`} fill="freeze" />
+      </path>
+    </svg>
 
 
   )
