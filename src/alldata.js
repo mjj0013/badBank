@@ -17,10 +17,10 @@ export const AllData = () =>{
     </tr>
   )})
   return(
-  <Card bgcolor="light" txtcolor="dark" header="Deposit" status={status}
+  <Card bgcolor="light" txtcolor="dark" header="All Data in Store" status={status}
       body={
         <div>
-        <h5>All Data in Store</h5>
+     
         
           <table className="table table-light myTable">
             <thead>

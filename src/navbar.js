@@ -124,13 +124,11 @@ export const NavBar=(intUser)=>{
                 data-bs-trigger="hover" data-bs-toggle="popover" title="Enter your credentials to access your bank account">Login</a>
             </li>
             <li className="nav-item">
-              <a id="depositLink" className="nav-link" href="#/deposit/" data-bs-trigger="hover" data-bs-toggle="popover" title="Transfer funds into your bank account"
-                onMouseEnter={depositOnHover}
+              <a id="depositLink" className="nav-link" href="#/deposit/" data-bs-trigger="hover" data-bs-toggle="popover" title="Transfer funds into your bank account" onMouseEnter={depositOnHover}
                 onMouseLeave={(e) => {returnToCurrent(e)}}>Deposit</a>
             </li>
             <li className="nav-item" >
-              <a id="withdrawLink" className="nav-link" href="#/withdraw/" data-bs-trigger="hover" data-bs-toggle="popover" title="Remove funds from your bank account"
-              onMouseEnter={withdrawOnHover} 
+              <a id="withdrawLink" className="nav-link" href="#/withdraw/" data-bs-trigger="hover" data-bs-toggle="popover" title="Remove funds from your bank account" onMouseEnter={withdrawOnHover} 
               onMouseLeave={(e) => {returnToCurrent(e)}}>Withdraw</a>
             </li>
 
