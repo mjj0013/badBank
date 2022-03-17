@@ -2,8 +2,11 @@
     position:fixed;
     top:10vh;
     left:5vw;
+    /* width:200rem; */
+    width:100rem;
     filter:drop-shadow(3mm 5px 2px rgba(0, 0, 0,.4));
 }
+
 .coverIcon {
     
     display:block;
@@ -30,9 +33,7 @@
 
 
 .homePageImg {
-    
     box-shadow: 1px 4px 2rem rgba(0,0,0,.7);
-    
 }
 
 #userGreeting {
@@ -91,22 +92,30 @@
 
 }
 
-
+.nav-item.activePage {
+    background: linear-gradient(0deg,hsla(98, 46%, 15%, .4) 100%, hsla(98, 46%, 25%, .8) 0%);
+}
 
 .nav-item {
     opacity:1;
 
-    display:block;
+    display:inline;
     height:100%;
     overflow:auto;
-    transition-property: background, box-shadow, border;
+    transition-property: background, box-shadow;
     transition: all .25s ease-out;
     box-shadow:0px 0px 0 rgba(0,0,0,.5);
     
 }
 
+/* .navbar-brand.activePage {
+    background: linear-gradient(0deg,hsla(98, 46%, 15%, .4) 100%, hsla(98, 46%, 25%, .8) 0%);
+    box-shadow:0px 3px .4em rgba(0,0,0,.5);
+} */
 
-.nav-item:hover {
+
+.nav-item:hover,
+.nav-item:focus {
     background: linear-gradient(0deg,hsla(98, 46%, 15%, .4) 100%, hsla(98, 46%, 25%, .8) 0%);
     box-shadow:0px 3px .4em rgba(0,0,0,.5);
     
@@ -121,8 +130,6 @@
     /* border: 1px solid black; */
     z-index:9;
     display:block;
-
-
 }
 table, th, td , tr{
     border: 1px solid black;

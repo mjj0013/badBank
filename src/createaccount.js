@@ -103,12 +103,12 @@ export const CreateAccount = () => {
             handleFieldChange()
           }}/><br/>
 
-          <button id="submitAccountButton" type="submit" disabled className="btn btn-light" onClick={handleCreate}>Create Account</button>
+          <button id="submitAccountButton" type="submit" disabled className="btn btn-success" onClick={handleCreate}>Create Account</button>
         </div>
         ):(
               <>
               <h5>Success</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+              <button type="submit" className="btn btn-secondary" onClick={clearForm}>Add another account</button>
               </>
             )
         }

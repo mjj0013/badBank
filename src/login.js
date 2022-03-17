@@ -65,15 +65,14 @@ export const Login = () =>{
       
       <Card  bgcolor="light" txtcolor="dark" header="Login" status={status}
       body={show ? (  
-              <>
+        <>
               
-              Email address<br/>
-              <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e=>{ handleEmailChange(e);}
-              }/><br/>
-              Password<br/>
-              <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-              <button type="submit" className="btn btn-light" onClick={handleSubmit}>Login</button>
-              </>
+          Email address<br/>
+          <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e=>{ handleEmailChange(e);}}/><br/>
+          Password<br/>
+          <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
+          <button type="submit" className="btn btn-success" onClick={handleSubmit}>Login</button>
+        </>
             ): (
               <div style={{height:'120px'}}>
                 <h5 id="successText">Success</h5>
@@ -83,7 +82,7 @@ export const Login = () =>{
                   <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
                 </svg>
                
-                <button   type="submit" className="btn btn-dark successButton" onClick={clearForm}>Return</button>
+                <button   type="submit" className="btn btn-secondary successButton" onClick={clearForm}>Return</button>
               </div>
             )
         }
