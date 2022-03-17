@@ -88,14 +88,17 @@ const login = {
 
 }
 
+
+
 export const SymbolDecomp = (props) => {
+  
   var height = props.height? props.height: "500px";
   var currentPage = props.currentPage? props.currentPage: "bank";
   const pageSymbols = {"bank":bank, "withdraw":withdraw, "database":database, "login":login, "createAccount":createAccount}
   return (
-    <svg className="bgIcon" xmlns="https://www.w3.org/2000/svg"  height={height} viewBox="-20 -20 40 40" >
+    <svg id="morphIcon" className="bgIcon" xmlns="https://www.w3.org/2000/svg"  height={height} viewBox="-20 -20 40 40" >
 
-      {/* keyTimes="0; 0.25; 0.5; 0.75; 1" */}
+
       
       <path id="roof"   d={`${pageSymbols[currentPage].roof}`} fill="rgba(0,0,0,1.0)" stroke="black" strokeLinejoin="round" strokeWidth=".5px">
           <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>

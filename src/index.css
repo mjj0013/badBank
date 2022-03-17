@@ -76,16 +76,16 @@
     background: 
             radial-gradient(ellipse farthest-corner at left top,
                 hsla(98, 46%, 15%, .9) 0%,
-                hsla(98, 46%, 20%, .8) 15%,
-                hsla(98, 46%, 25%, .7) 35%,
-                hsla(98, 46%, 30%, .6) 45%,
-                hsla(98, 46%, 46%, .5) 90%) 20%, 
-            radial-gradient(ellipse farthest-side at right bottom,
-                hsla(98, 46%, 65%, .15) 0%,
-                hsla(98, 46%, 20%, .35) 15%,
-                hsla(98, 46%, 50%, .75) 33%,
-                hsla(98, 46%, 75%, .35) 66%,
-                hsla(98, 46%, 75%, .15) 100%) 0%;
+                hsla(98, 46%, 20%, .9) 15%,
+                hsla(98, 46%, 25%, .9) 35%,
+                hsla(98, 46%, 30%, .9) 45%,
+                hsla(98, 46%, 36%, .9) 90%) 10%, 
+            radial-gradient(ellipse farthest-corner at right top,
+                hsla(98, 46%, 75%, .15) 0%,
+                hsla(98, 46%, 60%, .35) 15%,
+                hsla(98, 46%, 50%, .55) 33%,
+                hsla(98, 46%, 25%, .55) 66%,
+                hsla(98, 46%, 25%, .55) 100%) 20%;
    
     z-index:5;
     box-shadow:0px 3px .4em rgba(0,0,0,.5);

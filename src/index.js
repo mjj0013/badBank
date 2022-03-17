@@ -15,7 +15,11 @@ import { SymbolDecomp } from "./symbolDecomp"
 
 export const UserContext = React.createContext(null);
 
+
+
+
 const Spa = () =>{
+
   return (
     <HashRouter>
       <NavBar />
@@ -31,8 +35,9 @@ const Spa = () =>{
           </Routes>
         </div>
       </UserContext.Provider>      
-      <SymbolDecomp height="500px" currentPage="bank"/>
+      <SymbolDecomp  height="500px" currentPage="bank"/>
       <div id="pageBg" />
+
     </HashRouter>
   );
 }
