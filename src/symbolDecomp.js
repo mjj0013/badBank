@@ -43,23 +43,6 @@ const withdraw = {
 }
 
 
-//balance symbol
-//foundation & column4  <=> left bucket & right bucket
-//column2  <=> rod
-//roof <=> base of balanceW
-//ceiling <=> arm/fulcrum of balance
-const balance = {
-  ceiling:"M 0 -15 c -2.72 0 -2.72 4 0 4 c 2.72 0 2.72 -4 0 -4 c 0 -0.657 0 -1.184 0 -2 c 5 0 5 7.99 0 8 c -5 0 -5 -7.975 0 -8 c 0 0.418 0 1.507 0 2",
-  column1:"M -11.296 -9.44 c -1.496 -0.447 -7.548 7.833 -7.4464 12.1272 c 0 2.5856 3.3544 4.6876 7.5 4.6876 c 0 -1.8816 0 -3.7632 0 -5.6448 c -1.433 0 -2.866 0 -4.299 0 c 2.7284 -5.678 5.1144 -8 4.2644 -11.14",
-  column2:"M -11.337 7.365 c 14.495 -1.432 1.717 -17.125 0 -16.809 c -0.4 2.374 1.33 5.099 4 11.194 c -1.3579 0 -2.7159 0 -4 0 c 0 1.8673 -0.0213 3.7347 0 5.6",
-  column3:"M 11.296 -9.44 c -13.287 12.365 -4.092 16.8148 0 16.8148 c 0 -1.8816 0 -3.7632 0 -5.6448 c -1.433 0 -2.866 0 -4.299 0 c 2.9464 -5.786 5.1144 -8 4.2644 -11.144",
-  column4:"M 11.337 7.365 c 15.42 -0.413 1.717 -17.125 0 -16.809 c -0.405 2.374 1.254 5.744 4 11.194 c -1.3579 0 -2.7159 0 -4 0 c 0 1.8673 -0.0213 3.7347 0 5.602",
-  foundation:"M -1.911 9.251 c -2.7941 0 -5.5881 0 -8.3822 0 c -5.2868 2 -2.3928 3.75 -1.8752 3.75 c 8.1251 0 16.2501 0 24.3752 0 c 3.9832 -0.82 -0.322 -3.751 -1.9558 -3.761 c -4 0 -8 0 -12.157 0",
-  floor:"M -1.963 -15.471 c 0 8.24 0 16.48 0 24.72 c 0.2213 0 0.4427 0 0.66 0 c 0.66 0 1.9269 0 3.1938 0 c 0 -8.2383 0 -16.4767 0 -24.715 c -1.2859 0 -2.5719 0 -3.8578 0",
-  roof:"M 9.296 -15.116 c -2.943 0 -4.587 0 -9.36 0 c 0 0 0 0 0 0 c -6.205 0 -8.379 0 -11.11 0 c 0 0 0 0 0 0 a 1 1 0 0 0 0 3.659 c 7.5307 0 15 0 22.592 0 a 1 1 0 0 0 0 -3.738 c -0.663 0 -1.326 0 -2 0",
-}
-
-
 
 //create account symbol: Windows user logo with plus sign
 const createAccount = {
@@ -105,13 +88,6 @@ const login = {
 
 }
 
-
-  // https://yqnn.github.io/svg-path-editor/
-
-
-  //https://css-tricks.com/adding-shadows-to-svg-icons-with-css-and-svg-filters/
-
-  
 export const SymbolDecomp = (props) => {
   var height = props.height? props.height: "500px";
   var currentPage = props.currentPage? props.currentPage: "bank";
@@ -125,7 +101,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeRoof" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.roof}`}fill="freeze"/>
           <animate  id="toCreateAccountRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.roof}`}fill="freeze" />
           <animate  id="toLoginRoof" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${login.roof}`}fill="freeze" />
-          <animate  id="toDatabaseRoof" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.roof}`}fill="freeze" />
+          <animate  id="toDatabaseRoof" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.roof}`}fill="freeze" />
           <animate  id="toWithdrawRoof" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.roof}`} fill="freeze" />
           <animate  id="toDepositRoof" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.roof}`} fill="freeze" />
           
@@ -136,7 +112,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeFoundation" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.foundation}`}fill="freeze"/>
           <animate  id="toCreateAccountFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.foundation}`}fill="freeze" />
           <animate  id="toLoginFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.foundation}`}fill="freeze" />
-          <animate  id="toDatabaseFoundation" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.foundation}`}fill="freeze" />
+          <animate  id="toDatabaseFoundation" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.foundation}`}fill="freeze" />
           <animate  id="toWithdrawFoundation" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.foundation}`} fill="freeze" />
           <animate  id="toDepositFoundation" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${deposit.foundation}`} fill="freeze" />
       </path>
@@ -145,7 +121,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeCol1" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column1}`}fill="freeze"/>
           <animate  id="toCreateAccountCol1" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${createAccount.column1}`}fill="freeze" />
           <animate  id="toLoginCol1" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${login.column1}`}fill="freeze" />
-          <animate  id="toDatabaseCol1" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.column1}`}fill="freeze" />
+          <animate  id="toDatabaseCol1" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.column1}`}fill="freeze" />
           <animate  id="toWithdrawCol1" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.column1}`} fill="freeze" />
           <animate  id="toDepositCol1" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${deposit.column1}`} fill="freeze" />
           
@@ -154,7 +130,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeCol2" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column2}`}fill="freeze"/>
           <animate  id="toCreateAccountCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column2}`}fill="freeze" />
           <animate  id="toLoginCol2" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${login.column2}`}fill="freeze" />
-          <animate  id="toDatabaseCol2" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.column2}`}fill="freeze" />
+          <animate  id="toDatabaseCol2" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.column2}`}fill="freeze" />
           <animate  id="toWithdrawCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column2}`} fill="freeze" />
           <animate  id="toDepositCol2" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column2}`} fill="freeze" />
         
@@ -163,7 +139,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeCol3" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column3}`}fill="freeze"/>
           <animate  id="toCreateAccountCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.column3}`}fill="freeze" />
           <animate  id="toLoginCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column3}`}fill="freeze" />
-          <animate  id="toDatabaseCol3" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.column3}`}fill="freeze" />
+          <animate  id="toDatabaseCol3" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.column3}`}fill="freeze" />
           <animate  id="toWithdrawCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column3}`} fill="freeze" />
           <animate  id="toDepositCol3" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column3}`} fill="freeze" />
       </path>
@@ -171,7 +147,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeCol4" attributeName="d" begin="indefinite" dur=".25s" repeatCount="1" to={`${bank.column4}`}fill="freeze"/>
           <animate  id="toCreateAccountCol4" attributeName="d"  begin="indefinite"  dur=".75s" repeatCount="1" to={`${createAccount.column4}`}fill="freeze" />
           <animate  id="toLoginCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.column4}`}fill="freeze" />
-          <animate  id="toDatabaseCol4" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.column4}`}fill="freeze" />
+          <animate  id="toDatabaseCol4" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.column4}`}fill="freeze" />
           <animate  id="toWithdrawCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.column4}`} fill="freeze" />
           <animate  id="toDepositCol4" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.column4}`} fill="freeze" />
       </path>
@@ -180,7 +156,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeFloor" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.floor}`}fill="freeze"/>
           <animate  id="toCreateAccountFloor" attributeName="d"  begin="indefinite"  dur=".75s" repeatCount="1" to={`${createAccount.floor}`}fill="freeze" />
           <animate  id="toLoginFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.floor}`}fill="freeze" />
-          <animate  id="toDatabaseFloor" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.floor}`}fill="freeze" />
+          <animate  id="toDatabaseFloor" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.floor}`}fill="freeze" />
           <animate  id="toWithdrawFloor" attributeName="d" begin="indefinite"  dur=".25s" repeatCount="1" to={`${withdraw.floor}`} fill="freeze" />
           <animate  id="toDepositFloor" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.floor}`} fill="freeze" />
       </path>
@@ -189,7 +165,7 @@ export const SymbolDecomp = (props) => {
           <animate  id="toHomeCeiling" attributeName="d" begin="indefinite" dur=".5s" repeatCount="1" to={`${bank.ceiling}`}fill="freeze"/>
           <animate  id="toCreateAccountCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${createAccount.ceiling}`}fill="freeze" />
           <animate  id="toLoginCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${login.ceiling}`}fill="freeze" />
-          <animate  id="toDatabaseCeiling" attributeName="d"  begin="indefinite"  dur=".25s" repeatCount="1" to={`${database.ceiling}`}fill="freeze" />
+          <animate  id="toDatabaseCeiling" attributeName="d"  begin="indefinite"  dur=".5s" repeatCount="1" to={`${database.ceiling}`}fill="freeze" />
           <animate  id="toWithdrawCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${withdraw.ceiling}`} fill="freeze" />
           <animate  id="toDepositCeiling" attributeName="d" begin="indefinite"  dur=".5s" repeatCount="1" to={`${deposit.ceiling}`} fill="freeze" />
       </path>
