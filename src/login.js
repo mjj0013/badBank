@@ -11,40 +11,57 @@ export const Login = () =>{
   const [userEntry, setUserEntry] = React.useState('');
   const ctx = React.useContext(UserContext);  
   var currentEmail = '';
+  var currentPassword = '';
 
-   function validateEmail() {
-      var validEntry = false;
-      for(let u=0; u < ctx.users.length; ++u) {
-        
-        if(ctx.users[u].email == currentEmail) {
-          console.log(currentEmail ,ctx.users[u])
-          setUserEntry(ctx.users[u])
-          validEntry = true;
-          break;
-        }
-      }
+  function validateEmail() {
+    var validEntry = false;
+    for(let u=0; u < ctx.users.length; ++u) {
       
-      if(!validEntry) {
-        setTimeout(() => setStatus(''),3000);
-        setUserEntry('');
+      if(ctx.users[u].email == currentEmail) {
+        console.log(currentEmail ,ctx.users[u])
+        setUserEntry(ctx.users[u])
+        validEntry = true;
+        break;
       }
+    }
+    
+    if(!validEntry) {
+      setTimeout(() => setStatus(''),3000);
+      setUserEntry('');
+    }
 
+  }
+  function isValidEmail(E) {
+    var r = new RegExp(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/);
+    return E.match(r)!=null
+  }
+
+  function handleFieldChange() {
+    
+    if(document.getElementById("email").value.length==0 ||  document.getElementById("password").value.length==0) document.getElementById("submitLoginButton").disabled=true;
+    else {
+      document.getElementById("submitLoginButton").disabled=false;
+      document.getElementById("submitLoginButton").onclick = handleSubmit;
+    }
   }
 
   function handleEmailChange(e) {
-
-    console.log('e.currentTarget.value',e.currentTarget.value)
+    
     currentEmail = e.currentTarget.value;
     setEmail(currentEmail);
     validateEmail();
-
+  }  
+  function handlePasswordChange(e) {
     
-
+    currentPassword = e.currentTarget.value;
+    setPassword(currentPassword);
+    
   }    
+
   function handleSubmit(e){
-    console.log('userEntry',userEntry)
-    if(userEntry!='') {
-      if(password == userEntry.password) {
+    console.log("submit hit",userEntry)
+    if(userEntry !='') {
+      if(currentPassword == userEntry.password) {
         ctx.currentUserIdx = userEntry.id;
         console.log("success")
         document.getElementById("userGreeting").innerHTML = `Greetings, ${ctx.users[ctx.currentUserIdx].name}`
@@ -65,14 +82,22 @@ export const Login = () =>{
       
       <Card  bgcolor="light" txtcolor="dark" header="Login" status={status}
       body={show ? (  
-        <>
+        <div>
               
           Email address<br/>
-          <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e=>{ handleEmailChange(e);}}/><br/>
+          <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e=>{ 
+            handleEmailChange(e)
+            handleFieldChange();
+            }}/><br/>
           Password<br/>
-          <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-          <button type="submit" className="btn btn-success" onClick={handleSubmit}>Login</button>
-        </>
+          <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={
+            e => {
+              handlePasswordChange(e)
+              handleFieldChange();
+            }}
+          /><br/>
+          <button id="submitLoginButton" type="submit" disabled className="btn btn-success" onClick={(e)=>handleSubmit(e)}>Login</button>
+        </div>
             ): (
               <div style={{height:'120px'}}>
                 <h5 id="successText">Success</h5>

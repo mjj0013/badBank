@@ -93,7 +93,7 @@ function databaseOnHover() {
 function returnToCurrent() {
   var path = window.location.href;
   var secondLast = path.substr(path.lastIndexOf("/",path.length-2));
-  console.log("exiting")
+  
   if(currentForm=="home" && secondLast=="/#") return;
   else if(currentForm=="createAccount" && secondLast=="/CreateAccount/") return;
   else if(currentForm=="deposit" && secondLast=="/deposit/") return;

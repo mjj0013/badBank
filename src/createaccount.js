@@ -61,7 +61,7 @@ export const CreateAccount = () => {
   function isValidEmail(E) {
     var r = new RegExp(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/);
     return E.match(r)!=null
-}
+  }
 
   function clearForm(){
     setName('');
