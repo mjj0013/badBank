@@ -18,9 +18,9 @@ export const Home = () =>{
       body={(
       
         <div>
-          {/* <img crossorigin="anonymous" src="https://matthew-jettbankingapplication.s3.amazonaws.com/src/coins2.jpeg" className="card-img-top homePageImg"/> */}
+         
           <svg className="card-img-top homePageImg" >
-            <image href="https://matthew-jettbankingapplication.s3.amazonaws.com/src/coins2.jpeg" crossorigin="anonymous"></image>      
+            <image href="./coins2.jpeg" crossorigin="anonymous"></image>      
           </svg> 
         </div>
       )}
