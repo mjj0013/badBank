@@ -5,7 +5,11 @@ A coding assignment for the MIT course *Professional Certificate in Coding: Full
 This banking application, *Bad Bank*, was created to help individuals effortlessly access bank accounts and immediately start making important transactions. 
 
 ## Installation Guidelines
-(Visit https://nodejs.org/en/download/ to install the latest versions of npm and Node.js) 
+Requirements:
+/*
+    - Git CLI (Visit https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+    - Node.js, npm (Visit https://nodejs.org/en/download/)
+*/
 
 To install *Bad Bank*
 ```
