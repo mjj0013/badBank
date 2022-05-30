@@ -1,5 +1,7 @@
 import "./index.css"
 // import { getAuth, onAuthStateChanged } from '@firebase/auth'
+
+
 export const Card = (props) =>{
     function classes(){
       const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
@@ -7,7 +9,6 @@ export const Card = (props) =>{
       const border = " border-dark"
       return 'card mb-3 ' + bg + txt+border;
     }
-  
     return (
       <div className={classes()} style={{zIndex:5, maxWidth: props.maxWidth? props.maxWidth:"20rem"}}>
         <div className="card-header">{props.header}</div>
@@ -20,4 +21,4 @@ export const Card = (props) =>{
         </div>
       </div>      
     );    
-  }
+}
