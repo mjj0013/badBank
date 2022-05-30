@@ -6,7 +6,7 @@ This banking application, *Bad Bank*, was created to help individuals effortless
 
 ## Installation Guidelines
 Requirements:
-/*
+/*:
     - Git CLI (Visit https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
     - Node.js, npm (Visit https://nodejs.org/en/download/)
 */
