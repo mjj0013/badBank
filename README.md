@@ -27,7 +27,7 @@ npm start
 
 
 ## Screenshots
-
+![Alt Text](badBankCapture.gif)
 ## Technology used
 
 ## Features
