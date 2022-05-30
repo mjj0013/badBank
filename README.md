@@ -6,6 +6,7 @@ This banking application, *Bad Bank*, was created to help individuals effortless
 
 ## Installation Guidelines
 (Visit https://nodejs.org/en/download/ to install the latest versions of npm and Node.js) 
+
 To install *Bad Bank*
 ```
 git clone https://github.com/mjj0013/badBank <your local directory>
@@ -15,6 +16,10 @@ cd <your local directory>
 Install the required npm packages.
 ```
 npm install
+```
+Run the application.
+```
+npm start
 ```
 
 
