@@ -36,9 +36,6 @@ export const AllData = () =>{
               {allUsers}
             </tbody>
           </table>
-
-
-      
         </div>
         }
     />

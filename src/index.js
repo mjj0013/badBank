@@ -10,7 +10,7 @@ import {NavBar} from './navbar.js';
 import {HashRouter, Route, Routes} from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import {AuthenticatedRoute} from './AuthenticatedRoute.js'
 import { SymbolDecomp } from "./symbolDecomp"
 
 export const UserContext = React.createContext(null);
@@ -19,6 +19,11 @@ export const UserContext = React.createContext(null);
 
 
 const Spa = () =>{
+
+  firebase.initializeApp(firebaseConfig);
+
+
+
 
   return (
     <HashRouter>
@@ -31,7 +36,12 @@ const Spa = () =>{
             <Route path="/login/" element={<Login />} />
             <Route path="/deposit/" element={<Deposit/>} />
             <Route path="/withdraw/" element={<Withdraw/>} />
-            <Route path="/alldata/" element={<AllData/>} />
+            {/* <Route path="/alldata/" element={<AllData/>} /> */}
+
+
+            <AuthenticatedRoute path="/alldata/" element={<AllData/>} />
+
+            
           </Routes>
         </div>
       </UserContext.Provider>      
