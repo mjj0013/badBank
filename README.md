@@ -31,7 +31,10 @@ npm start
 ## Technology used
 
 ## Features
-
+- Create a new account
+- Log-in to account
+- Deposit funds into account
+- Withdraw funds from account
 ## License
 Copyright 2022 Matthew Jett
 
