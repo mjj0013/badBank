@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {UserContext} from './index.js';
+import app from './auth.js'
 import {Card} from './context.js';
 import { SymbolDecomp } from './symbolDecomp.js';
+import "regenerator-runtime"
+
+
+
 export const CreateAccount = () => {
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
@@ -9,6 +14,10 @@ export const CreateAccount = () => {
   const [email, setEmail]       = React.useState('');
   const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);  
+
+
+  
+
 
   function validate(field, label){
     if(label == 'name') {
@@ -28,23 +37,21 @@ export const CreateAccount = () => {
     
   }
 
-  function handleCreate(){
+  var handleCreate = useCallback(async e=> {
+    e.preventDefault();
     let tempName = document.getElementById("name").value;
     let tempEmail = document.getElementById("email").value;
     let tempPassword = document.getElementById("password").value;
 
-    console.log(typeof tempName,typeof tempEmail,typeof tempPassword)
     var nameStatus=validate(tempName,'name');
     var emailStatus=validate(tempEmail,'email');
     var passwordStatus=validate(tempPassword,'password');
     var tempStatus = 'Error: ';
 
-
     if(typeof nameStatus == 'string' || typeof emailStatus== 'string' || typeof passwordStatus=='string') {
       if(typeof nameStatus == 'string')  tempStatus += nameStatus
       if(typeof emailStatus== 'string') tempStatus += (typeof nameStatus=='string')? `, ${emailStatus}`:emailStatus;
       if(typeof passwordStatus=='string') tempStatus += (typeof nameStatus=='string'||typeof emailStatus=='string')? `, ${passwordStatus}`:passwordStatus;
-      
       setStatus(tempStatus);
       document.getElementById("createAccountAlert").style.display = 'block';
       alert(tempStatus);
@@ -55,9 +62,20 @@ export const CreateAccount = () => {
 
       return;
     }
-    ctx.users.push({name:tempName,email:tempEmail,password:tempPassword,balance:100, id:ctx.users.length})
-    setShow(false);
-  }    
+    else {
+      // input is syntactially correct
+      try {
+        await app.auth().createUserWithEmailAndPassword(tempEmail, tempPassword)
+        ctx.users.push({name:tempName,email:tempEmail,password:tempPassword,balance:100, id:ctx.users.length})
+        setShow(false);
+      }
+      catch(error) {alert(error)}
+
+    }
+  }, [])
+    
+    
+   
   function isValidEmail(E) {
     var r = new RegExp(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/);
     return E.match(r)!=null

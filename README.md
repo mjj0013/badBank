@@ -29,12 +29,14 @@ npm start
 ## Screenshots
 ![Alt Text](https://github.com/mjj0013/badBank/blob/master/badBankCapture.gif)
 ## Technology used
-
+- React
+- Firebase
 ## Features
 - Create a new account
 - Log-in to account
 - Deposit funds into account
 - Withdraw funds from account
+- Firebase Authentication
 ## License
 Copyright 2022 Matthew Jett
 

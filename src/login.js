@@ -1,7 +1,8 @@
-import React from 'react';
-
+import React, {useCallback} from 'react';
+import "regenerator-runtime"
 import {UserContext} from './index.js';
 import {Card} from './context.js';
+import app from './auth.js'
 export const Login = () =>{
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
@@ -57,29 +58,43 @@ export const Login = () =>{
     setPassword(currentPassword);
     
   }    
+  var handleSubmit = useCallback(async e => {
+    e.preventDefault();
+  })
 
-  function handleSubmit(e){
-    console.log("submit hit",userEntry)
-    if(userEntry !='') {
-      if(currentPassword == userEntry.password) {
-        ctx.currentUserIdx = userEntry.id;
-        console.log("success")
-        document.getElementById("userGreeting").innerHTML = `Greetings, ${ctx.users[ctx.currentUserIdx].name}`
-        document.getElementById("userGreeting").display = 'block'
-        setShow(false);
-      }
+
+
+  var handleSubmit = useCallback(async e=>{
+    e.preventDefault();
+    
+    try {
+      var user = ctx.users[ctx.currentUserIdx]
+      console.log("user",user)
+      // if(userEntry !='') {
+      //   if(currentPassword == userEntry.password) {
+      //     ctx.currentUserIdx = userEntry.id;
+      //     document.getElementById("userGreeting").innerHTML = `Greetings, ${ctx.users[ctx.currentUserIdx].name}`
+      //     document.getElementById("userGreeting").display = 'block'
+      //     setShow(false);
+      //   }
+      // }
+   
+      await firebase.auth(app).signInWithEmailAndPassword(document.getElementById("email").value,document.getElementById("password").value)
+      
     }
-  }  
+    catch(err) {alert(err)}
+    
+  },[])
+
+
 
   function clearForm(){
-    
     setEmail('');
     setPassword('');
     setShow(true);
   }
    return (
     <div>
-      
       <Card  bgcolor="light" txtcolor="dark" header="Login" status={status}
       body={show ? (  
         <div>

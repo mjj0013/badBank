@@ -1,5 +1,7 @@
 import {Card} from './context.js'
 import "./index.css"
+import "regenerator-runtime"
+
 var myHeaders = new Headers();
 myHeaders.set("Access-Control-Allow-Origin", "*");
 myHeaders.set("Access-Control-Request-Headers", "*");
